@@ -467,7 +467,7 @@ function NavScrollExample() {
                        
             </ul>
                  </div>
-               <Link href="/contact" className="btn b-btn text-white">Contact</Link>
+               <Link href="/contact-us" className="btn b-btn text-white">Contact</Link>
       </nav>
    </div>
 </div>
