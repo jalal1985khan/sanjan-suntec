@@ -41,7 +41,7 @@ function NavScrollExample() {
       <small>Establish customer choice at the heart of your enterprise and enable right selling.</small></Link>
       </li>
       <li className="mb-4">
-      <Link href="/dynamic-offer-management" className="text-decoration-none text-black">
+      <Link href="/deal-management" className="text-decoration-none text-black">
       <h6>Deal Management</h6>
       <small>Automate end-to-end deal management and provide flexibility to create customer specific deals.</small></Link>
       </li>
