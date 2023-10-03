@@ -127,27 +127,183 @@ function LinksExample() {
 </Row>
 </Container>
 </Col>
-<Col sm={6}>
+<Col sm={6} className="d-flex align-items-center">
 <ContactForm customTitle='Contact Form' pdfFile='' />
 </Col>    
 </Row>
 </Container>
 <Container className="mt-5">
 <h2>Our Global Offices</h2>              
-<Row>
-<Col>
-<div class="card">
-  <img src="/images/australia-1.png" class="card-img-top" alt="..."/>
+<Row className="mt-4">
+<Col sm={4}  className="c_center">
+<div class="card rounded-0">
+  <img src="/images/australia-1.png" class="card-img-top c-img pt-3" alt="..."/>
   <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+    <h5 class="card-title">AUSTRALIA</h5>
+<p class="card-text" style={{ height: 60+'px' }}>1198 Toorak Road Camberwell Victoria, PO Box 1143, Hartwell Victoria 3124, Australia</p>
+</div>
+<div class="card-footer c_phone">
+Tel: + 61 3 9653 6410
   </div>
 </div>                      
-</Col>                  
+</Col> 
+<Col sm={4}  className="c_center">
+<div class="card rounded-0">
+  <img src="/images/canada.png" class="card-img-top c-img pt-3" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">CANADA</h5>
+    <p class="card-text" style={{ height: 60+'px'}}>1285 West Broadway, Suite 600,<br/>Vancouver BC V6H 3X8</p>
+                          </div>
+<div class="card-footer c_phone">
+Tel: +1 908 2789 465
+  </div>                          
+</div>                      
+</Col>   
+<Col sm={4}  className="c_center">
+<div class="card rounded-0">
+  <img src="/images/germany-1.png" class="card-img-top c-img pt-3" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">GERMANY</h5>
+    <p class="card-text" style={{ height: 60+'px' }}>Ledderhoser Weg 87, 55543<br/> Bad Kreuznach, Germany</p>
+                          </div>
+<div class="card-footer c_phone">
+Tel: +49 671 202 784 80
+  </div>                          
+</div>                      
+</Col>                 
+</Row>
+              
+<Row className="mt-4">
+<Col sm={4}  className="c_center">
+<div class="card rounded-0">
+  <img src="/images/singapore.png" class="card-img-top c-img pt-3" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">SINGAPORE</h5>
+    <p class="card-text" style={{ height: 60+'px' }}>Level 42, SunTec Tower Three,<br/>8 Temasek Boulevard, Singapore<br/> 038988</p>
+</div>
+<div class="card-footer c_phone">
+Tel: +65 6829 2139
+  </div>
+</div>                      
+</Col> 
+<Col sm={4}  className="c_center">
+<div class="card rounded-0">
+  <img src="/images/uae-1.png" class="card-img-top c-img pt-3" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">UAE</h5>
+    <p class="card-text" style={{ height: 60+'px' }}>Unit No: 3202 B, Cluster-W, Oaks Liwa<br/> Heights, JLT,PO Box No214275, Dubai,<br/> UAE</p>
+                          </div>
+<div class="card-footer c_phone">
+Tel: +971 43747427
+  </div>                          
+</div>                      
+</Col>   
+<Col sm={4}  className="c_center">
+<div class="card rounded-0">
+  <img src="/images/uk.png" class="card-img-top c-img pt-3" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">UK</h5>
+    <p class="card-text" style={{ height: 60+'px' }}>2nd Floor, 20st. Dunstan’s<br/>Hill, London, EC3R 8HL</p>
+                          </div>
+<div class="card-footer c_phone">
+Tel: +44 20 37952731
+  </div>                          
+</div>                      
+</Col>                 
+              </Row>
+              
+<Row className="mt-4">
+<Col sm={4}  className="c_center">
+<div class="card rounded-0">
+  <img src="/images/usa.png" class="card-img-top c-img pt-3 " alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">USA</h5>
+    <p class="card-text">333 Technology drive, Suite 260<br/>Canonsburg, PA 15317</p>
+</div>
+<div class="card-footer c_phone">
+Tel: +1 724 749 5699
+  </div>
+</div>                      
+</Col>                 
 </Row>
 
 </Container>
+<Container className="mt-5">
+<h2>Our Indian Offices</h2>              
+<Row className="mt-4">
+<Col sm={4}  className="c_center">
+<div class="card rounded-0">
+  <img src="/images/india.png" class="card-img-top c-img pt-3" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">BENGALURU</h5>
+<p class="card-text" style={{ height: 60+'px' }}>Ground floor, Salarpuria Touchstone,<br/>
+Varthur Hobli, Kadubeesanahalli,<br/>
+Outer Ring Road, Bangalore  560087</p>
+</div>
+<div class="card-footer c_phone">
+Tel: + 61 3 9653 6410
+  </div>
+</div>                      
+</Col> 
+<Col sm={4}  className="c_center">
+<div class="card rounded-0">
+  <img src="/images/india.png" class="card-img-top c-img pt-3" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">CHENNAI</h5>
+    <p class="card-text" style={{ height: 60+'px'}}>2nd Floor, 4th Module, Neville Tower,<br/> Ramanujan IT City, Taramani, Rajiv<br/> Gandhi Salai (OMR), Chennai 600113</p>
+</div>
+<div class="card-footer c_phone">
+Tel: +1 908 2789 465
+  </div>                          
+</div>                      
+</Col>   
+<Col sm={4}  className="c_center">
+<div class="card rounded-0">
+  <img src="/images/india.png" class="card-img-top c-img pt-3" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">KOCHI</h5>
+    <p class="card-text" style={{ height: 60+'px' }}>SEZ Unit, 1st floor<br/>
+Phase II, Carnival Infopark<br/>
+Kakkanad, Kochi 682030</p>
+                          </div>
+<div class="card-footer c_phone">
+Tel: +49 671 202 784 80
+  </div>                          
+</div>                      
+</Col>                 
+</Row>
+              
+<Row className="mt-4">
+<Col sm={4}  className="c_center">
+<div class="card rounded-0">
+  <img src="/images/india.png" class="card-img-top c-img pt-3" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">THIRUVANANTHAPURAM (HO)</h5>
+    <p class="card-text" style={{ height: 60+'px' }}>Vikramapuram Hills<br/>
+Kuravankonam, Kowdiar P.O<br/>
+Thiruvananthapuram 695003</p>
+</div>
+<div class="card-footer c_phone">
+Tel: +65 6829 2139
+  </div>
+</div>                      
+</Col> 
+<Col sm={4}  className="c_center">
+<div class="card rounded-0">
+  <img src="/images/india.png" class="card-img-top c-img pt-3" alt="..."/>
+  <div class="card-body">
+    <h5 class="card-title">THIRUVANANTHAPURAM</h5>
+    <p class="card-text" style={{ height: 60+'px' }}>Block No.8, SEZ B, Plot No.18,<br/> Technocity Campus Land,<br/> Technopark, Thiruvananthapuram 695581</p>
+                          </div>
+<div class="card-footer c_phone">
+
+  </div>                          
+</div>                      
+</Col>   
+                
+</Row>
+</Container>          
+
 
 
 

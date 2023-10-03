@@ -252,7 +252,7 @@
                                 .form-bg{
                                     background: #903ea047;
                                     padding: 16px;
-                                    border-radius: 9px;
+                                    border-radius: 0px;
                                 }
                                 .form-control {
                                     height: 44px;
@@ -268,13 +268,26 @@
                                     text-decoration: none;
                                     color:#fff;
                                 }
-                                
+                                .c_center{
+                                text-align: -webkit-center;
+                            }
+                            .c_phone{
+                                background: #000 !important;
+                                color:#fff !important;
+                                border-radius: 0px !important;
+                                font-size:20px;
+                                height:50px;
+                            }
                                 .w-btn {
                                     border: 2px solid #fff !important;
                                     border-radius: 0px!important;
                                     padding: 11px !important;
                                     width: 300px;
                                     background-color: #78d9de00 !important;
+                                }
+                                .c-img{
+                                    width:100px !important;
+                                    align-self: center;
                                 }
                                 .c-banner {
                                     background-repeat: no-repeat;
