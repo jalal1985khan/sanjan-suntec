@@ -6,7 +6,7 @@ function LinksExample() {
   return (
 
 <Container className="f_content text-center p-3 mt-4">
-<p className="fs-3">Why Our Customers Count On Us</p>
+      <h2 className="mt-5 mb-5">Why Our Customers Count On Us</h2>
 
 <Container className="counts mb-5">
 <Row>

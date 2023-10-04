@@ -38,7 +38,7 @@ function LinksExample() {
   return (
 
 <Container className="f_content text-center p-3 mt-4">
-    <p className="fs-4 txt-main">Over 150 Clients in 45+ Countries Rely on SunTec</p>
+<h2 className="mt-5 mb-5 txt-main">Over 150 Clients in 45+ Countries Rely on SunTec</h2>
 <OwlCarousel
           // className="owl-theme"
           loop={true}

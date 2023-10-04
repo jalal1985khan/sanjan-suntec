@@ -5,7 +5,7 @@ function LinksExample() {
   return (
 
 <Container className="f_content text-center p-3 mt-4">
-<p className="fs-3">Feature Content</p>
+      <h2 className="mt-5 mb-5">Feature Content</h2>
 
 <Container>
 <Row>

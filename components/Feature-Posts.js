@@ -4,7 +4,6 @@ function LinksExample() {
   return (
     <>
 <Container className="f_content text-center p-3 mt-4" fluid>
-        <p className="fs-3">Feature Content</p>
 </Container>        
 <Container style={{ background: '#fff'}} fluid className="f_content text-center g-0">     
 <Row >

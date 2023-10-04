@@ -16,6 +16,7 @@ import Testimonials from '../components/Testimonails';
 import Solutions from '../components/Industry-Solutions';
 import Partners from '../components/Partners';
 import Footer from '../components/Footer';
+import { FaArrowAltCircleRight } from 'react-icons/fa';
 
 
 const HomePage = () => {
@@ -139,7 +140,7 @@ useEffect(() => {
     <Life/>
     <Testimonials/>
 <Container className="mb-5">
-<h2 className="mt-5">What&apos;s New at SunTec</h2>
+<h2 className="mt-5 mb-5">What&apos;s New at SunTec</h2>
 <Row className="mb-5">
 {
 pr.map((post) => {
@@ -174,11 +175,11 @@ className="pr-text text-decoration-none">{post['title']['rendered']}</Link>
 
 </Row>
 <Row className="center">
-<Link href="/" className="b-btn text-white text-decoration-none mt-5 fs-5" style={{width:250+'px'}}>Get The Latest News</Link>
+<Link href="/news" className="b-btn text-white text-decoration-none mt-5 fs-5" style={{width:240+'px'}}>Get The Latest News <FaArrowAltCircleRight/></Link>
 </Row>
 </Container>
 <Container>
-<h2 className="text-center">Insights to Build a Customer-centric Business</h2>
+<h2 className="text-center mb-5">Insights to Build a Customer-centric Business</h2>
 <Container>
 <Row>
 <Col>
@@ -267,7 +268,7 @@ blogThird.map((post) => {
     Links = Type + '/'+ Pslug;
   }
 return (
-<Row className="wbg-top p-2 mb-4" style={{height:14+'em'}} key={post['id']}>
+<Row className="wbg-top p-2 mb-4" style={{height:14.4+'em'}} key={post['id']}>
 <Col sm={5} className="blog-padding middle">
 <img  src={post['featured_img_src']} className="blog-img"/>
 </Col>  
@@ -336,7 +337,7 @@ blogFifth.map((post) => {
   const Pslug =  post['slug'];
   const Links = Type + '/'+ Pslug;
 return (
-<Row className="wbg-gy p-2 mb-3" style={{height:14+'em'}} key={post['id']}> 
+<Row className="wbg-gy p-2 mb-3" style={{height:14.4+'em'}} key={post['id']}> 
 <Col className='blog-padding middle'>
 <Link 
 href={Links}
@@ -363,7 +364,7 @@ blogSixth.map((post) => {
   const Pslug =  post['slug'];
   const Links = Type + '/'+ Pslug;
 return (
-<Row className="wbg-top p-2 mb-4" style={{height:14+'em'}} key={post['id']}>
+<Row className="wbg-top p-2 mb-4" style={{height:14.4+'em'}} key={post['id']}>
 <Col sm={5} className="blog-padding middle">
 <img  src={post['featured_img_src']} className="blog-img"/>
 </Col>  
