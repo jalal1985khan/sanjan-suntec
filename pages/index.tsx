@@ -139,8 +139,9 @@ useEffect(() => {
     <Counts/>
     <Life/>
     <Testimonials/>
-<Container className="mb-5">
-<h2 className="mt-5 mb-5">What&apos;s New at SunTec</h2>
+<Container className="mb-5 ">
+<Container className="f_content text-center p-3 mt-4">        
+<h2 className="mt-5 mb-5">What&apos;s New at SunTec</h2></Container>
 <Row className="mb-5">
 {
 pr.map((post) => {
@@ -175,7 +176,7 @@ className="pr-text text-decoration-none">{post['title']['rendered']}</Link>
 
 </Row>
 <Row className="center">
-<Link href="/news" className="b-btn text-white text-decoration-none mt-5 fs-5" style={{width:240+'px'}}>Get The Latest News <FaArrowAltCircleRight/></Link>
+<Link href="/news" className="b-btn text-white text-decoration-none mt-2 fs-5" style={{width:240+'px'}}>Get The Latest News <FaArrowAltCircleRight/></Link>
 </Row>
 </Container>
 <Container>
