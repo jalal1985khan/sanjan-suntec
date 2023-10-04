@@ -4,10 +4,21 @@ import Link from 'next/link';
 import configData from "../config.json";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import BootstrapModal from '../components/Modal';
+
 function LinksExample() {
 
   const [allInsights, setInsights] = useState([]);
-  const [heading, setHeading] = useState(false); 
+  const [heading, setHeading] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShowModal = () => {
+    setShowModal(true);
+};
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+};
 
   const fetchInsights = async () => {
     let url = "";
@@ -49,7 +60,8 @@ function LinksExample() {
 <div className="b-text">
 <h1>Enterprise Product Management</h1>
 <p>Establish customer choice at the heart of your enterprise and enable right selling through the creation of an enterprise master catalog for all products and services.</p>
-<Link href="/" className="r-btn">Read the datasheet</Link>
+<button onClick={handleShowModal} className="r-btn">Read the Datasheet</button>
+<BootstrapModal show={showModal} handleClose={handleCloseModal} />
 </div>
 </Col> 
 <Col></Col> 

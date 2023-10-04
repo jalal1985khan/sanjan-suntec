@@ -4,10 +4,23 @@ import Link from 'next/link';
 import configData from "../config.json";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import BootstrapModal from '../components/Modal';
+
+
+
 function LinksExample() {
 
   const [allInsights, setInsights] = useState([]);
   const [heading, setHeading] = useState(false); 
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShowModal = () => {
+    setShowModal(true);
+};
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+};
 
   const fetchInsights = async () => {
     let url = "";
@@ -45,13 +58,14 @@ function LinksExample() {
 <Row>
 <Col>
 <div className="b-text">
-<h1>Dynamic Offer Management</h1>
-<p>Grow and enrich your customer relationships by quickly launching highly personalized, contextual offers.</p>
-<Link href="/" className="r-btn">Read the datasheet</Link>
+<h1>Deal Management</h1>
+<p>Automate end-to-end deal management process, provide flexibility to create customer-specific deals, mitigate conduct risk and reduce revenue leakage while ensuring price transparency and policy compliance.</p>
+<button onClick={handleShowModal} className="r-btn">Read the Datasheet</button>
+<BootstrapModal show={showModal} handleClose={handleCloseModal} />
 </div>
 </Col> 
 <Col></Col> 
-</Row>
+</Row>        
 </Container>
 <Container>
 <Row className="d-flex flex-row mt-5 mb-5">
@@ -60,22 +74,30 @@ function LinksExample() {
 </Col>
 <Col sm={6}>
 <h2 className="fs-1">Why SunTec Xelerate?</h2>
-<p className="fs-5">SunTec&apos;s Dynamic Offer Management on SunTec Xelerate platform is a digital innovation middle layer that can easily integrate with the bank&apos;s existing technology landscape and provide a highly configurable offer management capability that enables customer choice, enhances customer relationships, reduces time and cost to market and propels growth through up-sell and cross-sell capabilities.</p>
+<p className="fs-5">SunTec’s Deal Management software on the SunTec Xelerate platform enables financial services, telecom, travel and insurance firms to manage the sales process from the construction of the proposal through to the negotiation and closure of the deal. It enables organizations to streamline and automate the process by bringing the required transparency and measurability. SunTec’s Deal Management ensures a data-driven deal process that enhances transparency and sales forecasting. It significantly improves the sales process, simplifies complex negotiations, improves the quality of revenue, and streamlines downstream billing operations.</p>
 </Col>
 </Row>    
 </Container>
 
+<Container className="wbg-sun text-center d-flex flex-column justify-content-center" style={{height: 10 +'em'}}>
+<h2 className="text-white fs-2 mb-4">Discover related resources curated just for you</h2>
+<Row className="center">
+          <Col sm={3}><Button className="w-btn">eBook</Button></Col>
+          <Col sm={3}><Button className="w-btn">Case Study</Button></Col>    
+</Row>
+</Container>      
+      
 <Container className="mb-5">
 
-<h1 className="fs-2 mt-5 mb-5">Features of SunTec&apos;s Dynamic Offer Management</h1>
+<h1 className="fs-2 mt-5 mb-5">Features of SunTec’s Deal Management</h1>
 <Row>
 <Col>
 <Card className="c_shadow" style={{height:18+ 'em'}}>
       <Card.Img className="card-icon-left" src="/images/icon_1.png" />
       <Card.Body className="c_body">
-        <Card.Title>Contextual</Card.Title>
+        <Card.Title>Personalized Deals</Card.Title>
         <Card.Text>
-        Creation and provision of the right offers to each customer based on their choice and need
+        Enables the creation of specific, choice-driven deals for each customer
         </Card.Text>
       </Card.Body>
     </Card>
@@ -84,9 +106,9 @@ function LinksExample() {
 <Card className="c_shadow" style={{height:18+ 'em'}}>
       <Card.Img className="card-icon-left" src="/images/icon_2.png" />
       <Card.Body className="c_body">
-        <Card.Title>Multi-layered</Card.Title>
+        <Card.Title>Enterprise Level Platform</Card.Title>
         <Card.Text>
-        Product, Bundle, Service and Benefit Offers for individual customers, accounts and dynamic sub segments
+        Centralized capability to manage complex cross-product and cross-entity deals
         </Card.Text>
       </Card.Body>
     </Card>
@@ -95,9 +117,9 @@ function LinksExample() {
 <Card className="c_shadow" style={{height:18+ 'em'}}>
       <Card.Img className="card-icon-left" src="/images/icon_3.png" />
       <Card.Body className="c_body">
-        <Card.Title>Hyper-personalized</Card.Title>
+        <Card.Title>Intelligent Deal Pricing</Card.Title>
         <Card.Text>
-        Exhaustive and rule-driven qualification and eligibility criteria drive personalized and contextual application of offers
+        Simulate expected revenue and profits based on throughputs and price points to drive negotiations
         </Card.Text>
       </Card.Body>
     </Card>
@@ -109,9 +131,9 @@ function LinksExample() {
 <Card className="c_shadow" style={{height:18+ 'em'}}>
       <Card.Img className="card-icon-left" src="/images/icon_4.png" />
       <Card.Body className="c_body">
-        <Card.Title>Life Cycle Management</Card.Title>
+        <Card.Title>Compliance-Driven Workflows</Card.Title>
         <Card.Text>
-        Quick offer roll-out and offer switching and periodic review and expiry management ensure the right portfolio of offers
+        Fully automated workflow and notifications as well as multi-level, sequential and parallel approvals
         </Card.Text>
       </Card.Body>
     </Card>
@@ -120,9 +142,9 @@ function LinksExample() {
 <Card className="c_shadow" style={{height:18+ 'em'}}>
       <Card.Img className="card-icon-left" src="/images/icon_5.png" />
       <Card.Body className="c_body">
-        <Card.Title>Highly Flexible and Configurable</Card.Title>
+        <Card.Title>Intuitive User Experience</Card.Title>
         <Card.Text>
-        Easy creation and management of offers with intuitive UX for different personas
+        Intelligent UX based on persona allows ease of use and contextual interaction
         </Card.Text>
       </Card.Body>
     </Card>
@@ -131,9 +153,9 @@ function LinksExample() {
 <Card className="c_shadow" style={{height:18+ 'em'}}>
       <Card.Img className="card-icon-left" src="/images/icon_6.png" />
       <Card.Body className="c_body">
-        <Card.Title>Automated</Card.Title>
+        <Card.Title>Ease of Integration</Card.Title>
         <Card.Text>
-        Insight and rule-driven automation of the entire process
+        Automated implementation of the deal ensures synchronization with downstream pricing and billing systems
         </Card.Text>
       </Card.Body>
     </Card>
@@ -146,11 +168,11 @@ function LinksExample() {
 <Row>
   <Col className="center"><img src="/images/xelerate.png" height="300"/></Col>
   <Col>
-  <h3 className="text-white fs-2">&quot;Enable customer centricity with the right solution to each customer&apos;s context and need&quot;</h3>
+  <h3 className="text-white fs-2">&quot;Ensure organizational profitability by plugging revenue leakage effectively&quot;</h3>
 <p className="text-white fs-5">Roll out contextual offers in real time with SunTec&apos;s Dynamic Offer Management</p>
   <ul className="mt-5">
-   <li className="text-white fs-5"><strong>Offer orchestration like never before:</strong> Manage the entire offer development lifecycle in real time, from offer ideation via real-time customer transaction tracking, to simulation and testing, and finally offer fulfilment and tracking.</li> 
-   <li className="text-white fs-5"><strong>Roll out offers in real time:</strong>Get an insight into customer behavior to roll out the right offers rapidly, thereby enhancing customer engagement and customer lifetime value and eliminating revenue leakage.</li>
+   <li className="text-white fs-5"><strong>A de-cluttered view of deals:</strong> Manage deals across territories and obtain a comprehensive view of every deal, irrespective of multi-entity and multi-geography structures of customer enterprises.</li> 
+   <li className="text-white fs-5"><strong>Revenue monitoring made easy:</strong> Perform a cost-benefit analysis of deals and monitor revenue through commitment and deal performance tracking.</li>
   </ul>
   </Col>
 </Row>
@@ -173,7 +195,7 @@ function LinksExample() {
 <Card.Img className="card-icon-left" src="/images/icon_4_2.png" />
       <Card.Body className="c_body">
         <Card.Text>
-        Reduce time and cost to market of specific offers and campaigns
+        Mitigate conduct risk and promote fairness by right pricing for all products and services
         </Card.Text>
       </Card.Body>
     </Card>
@@ -183,7 +205,7 @@ function LinksExample() {
 <Card.Img className="card-icon-left" src="/images/icon_4_3.png" />
       <Card.Body className="c_body">
         <Card.Text>
-        Drive overall relationship value through cross bundle offers and benefits
+        Reduce cost through automation of the end-to-end process including deal implementation
         </Card.Text>
       </Card.Body>
     </Card>
@@ -196,7 +218,7 @@ function LinksExample() {
 <Card.Img className="card-icon-left" src="/images/icon_4_4.png" />
       <Card.Body className="c_body">
         <Card.Text>
-        Improve quality of revenue through automated management of offers including enrolment/de-enrolment
+        Drive overall relationship value through cross-bundle offers and benefits
         </Card.Text>
       </Card.Body>
     </Card>
@@ -206,7 +228,7 @@ function LinksExample() {
 <Card.Img className="card-icon-left" src="/images/icon_4_5.png" />
       <Card.Body className="c_body">
         <Card.Text>
-        Improve offer quality and breadth by co-innovating with third party partners
+        Enhance the sales process by providing the right insights for each stage of the process
         </Card.Text>
       </Card.Body>
     </Card>
@@ -216,7 +238,7 @@ function LinksExample() {
 <Card.Img className="card-icon-left" src="/images/icon_4_6.png" />
       <Card.Body className="c_body">
         <Card.Text>
-        Empower front end staff to service customers through specific and personalized offers
+        Reduce operational risks and improve controls through conditional approvals and centralization of the entire process
         </Card.Text>
       </Card.Body>
     </Card>
@@ -224,14 +246,7 @@ function LinksExample() {
 </Row>
 <Row>
 <Col>
-<Card className="c_shadow" style={{height:15+ 'em'}}>
-<Card.Img className="card-icon-left" src="/images/icon_4_7.png" />
-      <Card.Body className="c_body">
-        <Card.Text>
-        Reduce operational and revenue risk through end-to-end automation
-        </Card.Text>
-      </Card.Body>
-    </Card>
+
 </Col>
 <Col></Col>
 <Col></Col>
