@@ -3,9 +3,9 @@ import Link from 'next/link'
 function LinksExample() {
   return (
     <>
-<Container className="f_content text-center p-3 mt-4" fluid>
-</Container>        
-<Container style={{ background: '#fff'}} fluid className="f_content text-center g-0">     
+<Container className="mt-5 pt-5 overflow-hidden g-0" fluid>
+      
+<Container style={{ background: '#fff'}} fluid className="f_content text-center g-0 overflow-hidden">     
 <Row >
 <Col className="section-first mx-1 p-5" sm={4} >
 <div className="show-latam">  
@@ -52,7 +52,7 @@ Transform from being a utility provider to a value aggregator and rethink your v
 </div>   
 </Col>
 </Row>    
-</Container>      
+</Container> </Container>       
       </>
 
   );

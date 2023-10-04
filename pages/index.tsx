@@ -185,7 +185,6 @@ className="pr-text text-decoration-none">{post['title']['rendered']}</Link>
 <Row>
 <Col>
 {
-
 blogFirst.map((post) => {
   //console.log(post);
 
@@ -224,7 +223,6 @@ className="pr-text text-decoration-none">
 
 blogSecond.map((post) => {
   //console.log(post);
-
   const Type =  post['type'];
   const Pslug =  post['slug'];
   let Links;
@@ -258,7 +256,6 @@ className="pr-text text-decoration-none">
 
 blogThird.map((post) => {
   //console.log(post);
-
   const Type =  post['type'];
   const Pslug =  post['slug'];
   let Links;

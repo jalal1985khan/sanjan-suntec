@@ -23,7 +23,7 @@ function UncontrolledExample() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="/images/inssurance.jpeg"
+          src="/images/insuranceNew.jpg"
           alt="Second slide"
           height="440"
         />
