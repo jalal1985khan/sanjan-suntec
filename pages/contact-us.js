@@ -161,7 +161,7 @@ Tel: +1 908 2789 465
 </Col>   
 <Col sm={4}  className="c_center">
 <div class="card rounded-0">
-  <img src="/images/germany-1.png" class="card-img-top c-img pt-3" alt="..."/>
+  <img src="/images/germany.png" class="card-img-top c-img pt-3" alt="..."/>
   <div class="card-body">
     <h5 class="card-title">GERMANY</h5>
     <p class="card-text" style={{ height: 60+'px' }}>Ledderhoser Weg 87, 55543<br/> Bad Kreuznach, Germany</p>

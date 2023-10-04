@@ -134,7 +134,7 @@
                                 }
                                 
                                 .f_content {
-                                    width: 100% !important;
+                                    width: 101% !important;
                                 }
                                 
                                 .b_content {
@@ -207,9 +207,13 @@
                                     overflow: hidden;
                                     opacity: 0.9 1s ease-out;
                                     transition: all 1s;
-                                    height: 0px;
-                                    
-                                    
+                                    height: 0px;   
+                                }
+                                .required{
+                                    color:red;
+                                }
+                                .error{
+                                    color:red;  
                                 }
                                 
                                 .section-first:hover .slide-body {
