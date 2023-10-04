@@ -25,7 +25,7 @@ function LinksExample() {
 <Col className="b-box" sm={4}>
 <div>
 <h3 className="fs-1">3X</h3>
-<p className="fs-5 h">Increase in Customer<br />Base</p>
+<p className="fs-5 h">Increase in <br />Customer Base</p>
 </div>            
 <div><hr style={{marginTop:33 +'px', marginBottom:30 +'px'}} /></div>
 <div>

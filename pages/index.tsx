@@ -233,7 +233,7 @@ blogSecond.map((post) => {
     Links = Type + '/'+ Pslug;
   }
 return (
-<Row className="wbg-gy p-2 mb-3" style={{height:14+'em'}} key={post['id']}> 
+<Row className="wbg-gy p-2 mb-3" style={{height:14.4+'em'}} key={post['id']}> 
 <Col className='blog-padding middle'>
 <Link 
 href={Links}
