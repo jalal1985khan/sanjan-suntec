@@ -9,8 +9,8 @@ function LinksExample() {
 <Row >
 <Col className="section-first mx-1 p-5" sm={4} >
 <div className="show-latam">  
-<p className="m-heading">What’s life at SunTec like?</p>
-<p className="s-heading">Join the Team that Drives Banking Transformation</p>
+<p className="m-heading">SunTec Relationship-based Pricing:</p>
+<p className="s-heading">Make Pricing Your Strategic Differentiator</p>
 <div class="slide-body">
 <p className="s-text">More than 80% of India’s population holds bank accounts. This presents a significant market for banks to establish and deepen relationships with innovative pricing models.</p>
 <ul className="s-text">
