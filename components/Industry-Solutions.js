@@ -52,14 +52,14 @@ function UncontrolledExample() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="/images/telecom_banner.png"
+          src="/images/telecom.jpg"
           alt="Third slide"
           height="440"
         />
 
         <Carousel.Caption>
-          <h3 className="fs-1 black">TELECOM</h3>
-          <p className="black fs-5 w">Lead the way and add new revenue streams for your telcom business with SunTec Xelerate’s powerful intelligence layer. Manage products, billing, and pricing seamlessly, thereby delivering an impactful customer experience.</p>
+          <h3 className="fs-1 text-white">TELECOM</h3>
+          <p className="text-white fs-5 w">Lead the way and add new revenue streams for your telcom business with SunTec Xelerate’s powerful intelligence layer. Manage products, billing, and pricing seamlessly, thereby delivering an impactful customer experience.</p>
           <Button className="b-btn">GET STARTED</Button>
         </Carousel.Caption>
       </Carousel.Item>

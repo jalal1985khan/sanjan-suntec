@@ -2,12 +2,13 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 import Link from 'next/link'
 function LinksExample() {
   return (
-
-<Container className="f_content text-center p-3 mt-4">
-<p className="fs-3">Feature Content</p>
-<Container>
-<Row>
-<Col className="section-first" sm={4}>
+    <>
+<Container className="f_content text-center p-3 mt-4" fluid>
+        <p className="fs-3">Feature Content</p>
+</Container>        
+<Container style={{ background: '#fff'}} fluid className="f_content text-center g-0">     
+<Row >
+<Col className="section-first mx-1 p-5" sm={4} >
 <div className="show-latam">  
 <p className="m-heading">What’s life at SunTec like?</p>
 <p className="s-heading">Join the Team that Drives Banking Transformation</p>
@@ -21,7 +22,7 @@ function LinksExample() {
 <Link className="slide-btn" href="/relationship-based-pricing-management">Unlock price-led innovation</Link>
 </div>   
 </Col>
-<Col className="section-first" sm={4}>
+<Col className="section-first mx-1 p-5" sm={4} >
 <div className="show-latam">  
 <p className="m-heading">SunTec Ecosystem Management and Monetization:</p>
 <p className="s-heading">Explore the Emerging Open Banking Economy</p>
@@ -37,7 +38,7 @@ Transform from being a utility provider to a value aggregator and rethink your v
 <Link className="slide-btn" href="/ecosystem-management-and-monetization/">Capitalize your ecosystem</Link>
 </div>   
 </Col>
-<Col className="section-first" sm={4}>
+<Col className="section-first p-5" sm={4} >
 <div className="show-latam">  
 <p className="m-heading">What’s life at SunTec like?</p>
 <p className="s-heading">Join the Team that Drives Banking Transformation</p>
@@ -51,11 +52,9 @@ Transform from being a utility provider to a value aggregator and rethink your v
 <Link className="slide-btn" href="/career/">Explore opportunities</Link>
 </div>   
 </Col>
-</Row>
-
-</Container>
-
-</Container>
+</Row>    
+</Container>      
+      </>
 
   );
 }

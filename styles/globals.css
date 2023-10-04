@@ -129,12 +129,12 @@
                                 
                                 .h_alert {
                                     width: 80% !important;
-                                    background-color: #BC91C1;
+                                    background-color: #e5d3e6;
                                     height: 100px;
                                 }
                                 
                                 .f_content {
-                                    width: 90% !important;
+                                    width: 100% !important;
                                 }
                                 
                                 .b_content {
@@ -203,33 +203,28 @@
                                 }
                                 
                                 .slide-body {
-                                    display: none;
+                                    /* display: none; */
                                     overflow: hidden;
+                                    opacity: 0.9 1s ease-out;
+                                    transition: all 1s;
+                                    height: 0px;
+                                    
+                                    
                                 }
                                 
                                 .section-first:hover .slide-body {
                                     display: block;
-                                    animation: fade-bottom 0.5s ease-in;
-                                    overflow: hidden;
+                                    height: 300px;
+                                    
+                                    /* overflow: hidden; */
+                                    /* opacity: 1 ; */
+                                    
                                 }
                                 
-                                .section-first:hover .m-heading {
-                                    display: block;
-                                    animation: fade-up 0.5s ease-in;
-                                    overflow: hidden;
-                                }
                                 
-                                .section-first:hover .s-heading {
-                                    display: block;
-                                    animation: fade-up 0.5s ease-in;
-                                    overflow: hidden;
-                                }
+                               
                                 
-                                .section-first:hover .slide-btn {
-                                    display: block;
-                                    animation: fade-up 0.5s ease-in;
-                                    overflow: hidden;
-                                }
+                              
                                 
                                 .slide-btn {
                                     background-color: #95519e !important;
@@ -314,11 +309,13 @@
                                 }
                                 
                                 .section-first {
-                                    height: 600px;
-                                    width: 410px !important;
+                                    height: 680px;
+                                    width: 32.33% !important;
                                     background-color: #c9eff2;
                                     overflow: hidden;
                                     margin: 5px;
+                                    
+                                    
                                 }
                                 
                                 .show-latam {
@@ -328,25 +325,27 @@
                                     justify-content: center;
                                     align-content: center;
                                     transition: all 1.5s ease 0s;
+                                    opacity: 1;
                                 }
                                 
                                 .section-first:hover {
                                     background-color: #78D9DE;
                                     cursor: pointer;
                                     background-image: url(https://www.suntecgroup.com/wp-content/uploads/2022/05/2-bg-new_.png);
-                                    height: 600px;
+                                    height: 680px;
                                     background-position: center;
                                     background-repeat: no-repeat;
                                     background-size: cover;
                                 }
                                 
                                 @keyframes fade-bottom {
-                                    0% {
-                                        transform: translateY(100px);
+                                    50% {
+                                        transform: translateY(-100px);
                                         opacity: 1;
                                     }
+                                   
                                     100% {
-                                        transform: translateY(0px);
+                                        transform: translateY(-100px);
                                         opacity: 1;
                                     }
                                 }
@@ -354,6 +353,14 @@
                                 @keyframes fade-up {
                                     100% {
                                         transform: translateY(0px);
+                                        opacity: 1;
+                                    }
+                                    90% {
+                                        transform: translateY(-10px);
+                                        opacity: 1;
+                                    }
+                                    80% {
+                                        transform: translateY(-20px);
                                         opacity: 1;
                                     }
                                     0% {
