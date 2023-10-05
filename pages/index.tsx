@@ -2,7 +2,6 @@ import {Container,Row, Col,Card ,Image} from 'react-bootstrap';
 import { useEffect, useState } from "react";
 import Link from 'next/link';
 import configData from "../config.json";
-
 import Header from '../components/Header';
 import Banner from '../components/Home-Banner';
 import Text from '../components/Home-Text';
@@ -176,7 +175,7 @@ className="pr-text text-decoration-none">{post['title']['rendered']}</Link>
 
 </Row>
 <Row className="center">
-<Link href="/news" className="b-btn text-white text-decoration-none mt-2 fs-5" style={{width:240+'px'}}>Get The Latest News <FaArrowAltCircleRight/></Link>
+<Link href="/news" className="b-btn text-white text-decoration-none mt-2 fs-5" style={{width:215+'px'}}>Get The Latest News</Link>
 </Row>
 </Container>
 <Container>

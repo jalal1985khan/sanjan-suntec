@@ -9,6 +9,10 @@
                                     margin: 0;
                                     font-family: 'Open Sans', sans-serif;
                                 }
+                                .counts a:hover{
+                                    color: #fff !important;
+                                    
+                                }
                                 
                                 .txt-main {
                                     color: #95519e !important;
@@ -145,6 +149,11 @@
                                     color:#000;
                                     text-decoration: none !important;
                                 }
+                               
+
+                                .f_hover svg{
+                                    height:60px;
+                                }
                                 
                                 .f_hover {
                                     width: 209px !important;
@@ -267,6 +276,15 @@
                                     text-decoration: none;
                                     color:#fff;
                                 }
+                                .b-btn:hover {
+                                    background-color: #95519e !important;
+                                    border: 0px !important;
+                                    border-radius: 0px!important;
+                                    /* width: 250px; */
+                                    padding: 11px !important;
+                                    text-decoration: none;
+                                    color:#fff;
+                                }
                                 .c_center{
                                 text-align: -webkit-center;
                             }
@@ -375,7 +393,7 @@
                                 }
                                 
                                 .partners {
-                                    width: 200px !important;
+                                    width: 180px !important;
                                 }
                                 
                                 .partner-bg {
@@ -1100,7 +1118,7 @@
                                     bottom: 15px;
                                     z-index: 99;
                                     left: 21px;
-                                    background: #FF6208;
+                                    background:#95519e !important;
                                     padding: 11px;
                                     color: #fff;
                                     text-decoration: none;

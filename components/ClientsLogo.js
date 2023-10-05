@@ -18,6 +18,7 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
 
   const options = {
     loop: true,
+    nav:true,
     margin: 10,
     responsive: {
       0: {
