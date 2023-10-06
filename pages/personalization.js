@@ -10,8 +10,8 @@ function LinksExample() {
   const [allInsights, setInsights] = useState([]);
   const [heading, setHeading] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const PdfLink = 'https://www.suntecgroup.com/wp-content/uploads/2022/01/Enterprise-Product-Management.pdf';
-  const PostTitle = "Enterprise Product Management";
+  const PdfLink = 'https://www.suntecgroup.com/wp-content/uploads/2022/05/Personalization-use-cases.pdf';
+  const PostTitle = "SunTec Personalization Solution for Banking";
 
   const handleShowModal = () => {
     setShowModal(true);
@@ -44,7 +44,7 @@ function LinksExample() {
 <div className="square-text-dark ">
 <h1 className="fs-1">SunTec Personalization Solution for Banking</h1>
 <p className="fs-5">Tailor your banking offers to suit customers&apos; specific needs</p>
-<button onClick={handleShowModal} className="r-btn">Read the Datasheet</button>
+<button onClick={handleShowModal} className="b-btn">Read the Datasheet</button>
 <BootstrapModal show={showModal} handleClose={handleCloseModal} pdfLink={PdfLink} title={PostTitle} />
 </div>
 <div class="lin-dark"></div>
