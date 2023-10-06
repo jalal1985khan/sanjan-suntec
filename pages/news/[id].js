@@ -5,7 +5,6 @@ import {WhatsappShareButton, EmailShareButton ,TwitterShareButton ,LinkedinShare
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 // import GravityForm from 'react-native-gravityform';
-import ContactForm from '../../utils/ContactForm';
 
 const post = ({data}) => {
   console.log(data);
@@ -19,7 +18,7 @@ return (
 <Container fluid className="breadcum">
 <Breadcrumb >
       <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
-      <Breadcrumb.Item href="/news">News</Breadcrumb.Item>
+      <Breadcrumb.Item href="/news">news</Breadcrumb.Item>
       <Breadcrumb.Item href={post['slug']} active>
       {post['title']['rendered']}
       </Breadcrumb.Item>
@@ -46,92 +45,110 @@ Liked the post? Share this on your social media</Col>
 <TwitterShareButton className="p-2"
 url={post['link']}
 title={post['title']['rendered']}
-caption={post['title']['rendered']}
->
+caption={post['title']['rendered']}>
 <TwitterIcon 
 size={55} 
 round={true}
 iconFillColor='black'
-className="icon-back"
-
-/>
+className="icon-back"/>
 </TwitterShareButton>
-
 <LinkedinShareButton className="p-2"
 url={post['link']}
 title={post['title']['rendered']}
 summary={post['excerpt']['rendered']}
-source={post['slug']}
->
+source={post['slug']} >
 <LinkedinIcon 
 size={55} 
 round={true} 
 iconFillColor='black'
-className="icon-back"
-/>
+className="icon-back"/>
 </LinkedinShareButton>
 <WhatsappShareButton className="p-2"
 url={post['link']}
-title={post['title']['rendered']}
->
+title={post['title']['rendered']}>
 <WhatsappIcon 
 size={55} 
 round={true} 
 iconFillColor='black'
-className="icon-back"
-/>
+className="icon-back"/>
 </WhatsappShareButton>
 <EmailShareButton
 subject={post['title']['rendered']}
 body=""
-className="p-2"
->
+className="p-2">
 <EmailIcon 
 size={55} 
 round={true} 
 iconFillColor='black'
-className="icon-back"
-/>
+className="icon-back"/>
 </EmailShareButton>
-
-
-
 </Col>  
 </Row>  
 </Container>
-<Container className="mt-5">
+<Container className="mt-5 border">
 <Row>
-<Col sm={7}>
+<Col sm={9}>
 <div dangerouslySetInnerHTML={{__html:post['content']['rendered']}} className="fs-5"/>
 </Col>  
-<Col>
-
-<ContactForm customTitle={post['title']['rendered']} pdfFile={post['acf']['pdf_file']} />
+<Col className="border">
+<Row>
+<Col className="wbg-gr p-3 text-white">
+<p className="fs-5">Liked the article?<br/>
+Share this on your social media</p>
+<Row>
+<Col className="text-center">
+<TwitterShareButton className="p-2"
+url={post['link']}
+title={post['title']['rendered']}
+caption={post['title']['rendered']}>
+<TwitterIcon 
+size={40} 
+round={true}
+iconFillColor='black'
+className="icon-back"/>
+</TwitterShareButton>
+<LinkedinShareButton className="p-2"
+url={post['link']}
+title={post['title']['rendered']}
+summary={post['excerpt']['rendered']}
+source={post['slug']} >
+<LinkedinIcon 
+size={40} 
+round={true} 
+iconFillColor='black'
+className="icon-back"/>
+</LinkedinShareButton>
+<WhatsappShareButton className="p-2"
+url={post['link']}
+title={post['title']['rendered']}>
+<WhatsappIcon 
+size={40} 
+round={true} 
+iconFillColor='black'
+className="icon-back"/>
+</WhatsappShareButton>
+<EmailShareButton
+subject={post['title']['rendered']}
+body=""
+className="p-2">
+<EmailIcon 
+size={40} 
+round={true} 
+iconFillColor='black'
+className="icon-back"/>
+</EmailShareButton>
 
 </Col>
 </Row>
+</Col>
+</Row>
 
-
+</Col>
+</Row>
 </Container>
-
-
-
-
 <Footer/>
-
-
 </div>
-
-
-
-
-
-
-
 )
-
-
-
 })}
 
 
