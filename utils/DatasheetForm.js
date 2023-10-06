@@ -5,13 +5,14 @@ import axios from 'axios';
 import { Col, Row, Container } from 'react-bootstrap'
 import { RotatingLines } from 'react-loader-spinner'
 
-const ContactForm = ({ customTitle , pdfFile }) => {
+const ContactForm = ({ customTitle , pdfFile, PdfLink }) => {
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
         businessEmail: '',
-        title: customTitle,
-        pdf:pdfFile,
+        customTitle: customTitle,
+        pdfFile: pdfFile,
+        
     });
     const isBlank = (str) => {
         return !str.trim();
@@ -77,7 +78,9 @@ const ContactForm = ({ customTitle , pdfFile }) => {
             console.log(response.data.status);
             if (response.data.status === 'mail_sent') {
                 setFormVisible(false); // Hide the form
+                window.open(PdfLink, '_blank');
                 setSuccessMessage('Thank you for your submission!');
+                setShowModal(false);
             } else {
                 setError('An error occurred. Please try again.');
             }
@@ -138,7 +141,8 @@ id="designation"
 placeholder="Business Email"
 value={formData.businessEmail}
 onChange={handleChange}
-/></div>
+                                /></div>
+                           
 </Col>
 </Row>
 

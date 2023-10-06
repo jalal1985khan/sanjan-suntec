@@ -15,7 +15,7 @@ import Testimonials from '../components/Testimonails';
 import Solutions from '../components/Industry-Solutions';
 import Partners from '../components/Partners';
 import Footer from '../components/Footer';
-import { FaArrowAltCircleRight } from 'react-icons/fa';
+
 
 
 const HomePage = () => {

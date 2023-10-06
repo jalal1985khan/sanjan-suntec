@@ -11,6 +11,8 @@ function LinksExample() {
   const [allInsights, setInsights] = useState([]);
   const [heading, setHeading] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const PdfLink = 'https://www.suntecgroup.com/wp-content/uploads/2022/01/Enterprise-Product-Management.pdf';
+  const PostTitle = "Enterprise Product Management";
 
   const handleShowModal = () => {
     setShowModal(true);
@@ -61,7 +63,7 @@ function LinksExample() {
 <h1>Enterprise Product Management</h1>
 <p>Establish customer choice at the heart of your enterprise and enable right selling through the creation of an enterprise master catalog for all products and services.</p>
 <button onClick={handleShowModal} className="r-btn">Read the Datasheet</button>
-<BootstrapModal show={showModal} handleClose={handleCloseModal} />
+              <BootstrapModal show={showModal} handleClose={handleCloseModal} pdfLink={PdfLink} title={PostTitle} />
 </div>
 </Col> 
 <Col></Col> 
