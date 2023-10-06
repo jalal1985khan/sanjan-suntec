@@ -63,7 +63,7 @@ function LinksExample() {
 <h1>Enterprise Product Management</h1>
 <p>Establish customer choice at the heart of your enterprise and enable right selling through the creation of an enterprise master catalog for all products and services.</p>
 <button onClick={handleShowModal} className="r-btn">Read the Datasheet</button>
-              <BootstrapModal show={showModal} handleClose={handleCloseModal} pdfLink={PdfLink} title={PostTitle} />
+<BootstrapModal show={showModal} handleClose={handleCloseModal} pdfLink={PdfLink} title={PostTitle} />
 </div>
 </Col> 
 <Col></Col> 
