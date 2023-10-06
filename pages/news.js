@@ -89,7 +89,7 @@ function LinksExample() {
                         </Moment>
                         </Col>
                         <Col className="d-flex justify-content-end">
-                        <Link key={post.id} href={`/blogs/${post['slug']}`} className="float-right">
+                        <Link key={post.id} href={`/news/${post['slug']}`} className="float-right">
                         Read more
                       </Link>
                         </Col>
