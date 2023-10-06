@@ -3,6 +3,7 @@ import configData from "../../config.json";
 // import React, { useEffect, useState } from "react";
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import CareerForm from '../../utils/CareerForm'
 // import GravityForm from 'react-native-gravityform';
 
 const post = ({data}) => {
@@ -45,6 +46,7 @@ return (
 <div dangerouslySetInnerHTML={{__html:post['content']['rendered']}} className="fs-5"/>
 </Col>  
 <Col className="border">
+          < CareerForm customTitle={post['title']['rendered']} />          
 </Col>
 </Row>
 </Container>
