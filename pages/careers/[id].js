@@ -27,10 +27,10 @@ return (
 <Container fluid key={post.id}  >
 </Container>
 <Container fluid>
-<Card className="border-0 text-center">
+<Card className="border-0 text-center mt-4">
       <Card.Body>
         <h1>{post['acf']['headline']}</h1>
-      <Button className="b-btn mb-4">{post['title']['rendered']}</Button>
+      <Button className="b-btn mb-4 mt-4">{post['title']['rendered']}</Button>
         <Card.Title>Experience: <span dangerouslySetInnerHTML={{__html:post['acf']['experience']}}/></Card.Title>
         <Card.Title>Location: <span dangerouslySetInnerHTML={{__html:post['acf']['job_location']}} /></Card.Title>
         <Card.Text dangerouslySetInnerHTML={{__html:post['acf']['job_location_subfield']}} className="fs-5"/>
@@ -45,8 +45,6 @@ return (
 <div dangerouslySetInnerHTML={{__html:post['content']['rendered']}} className="fs-5"/>
 </Col>  
 <Col className="border">
-
-
 </Col>
 </Row>
 </Container>
