@@ -206,7 +206,7 @@ function NavScrollExample() {
                               <div className="col-sm-6">
                                  <ul className="nav-ul">
                                     <li className="mb-4">
-                                       <Link href="/" className="text-decoration-none text-black">
+                                       <Link href="/suntec-banking-as-a-service-solution" className="text-decoration-none text-black">
                                           <h6>Banking-as-a-Service</h6>
                                           <small className="m_text">Deliver lifecycle experiences through the ecosystem and not with mere products and services.</small>
                                        </Link>

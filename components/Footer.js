@@ -70,7 +70,7 @@ function LinksExample() {
 <hr className="border"/>
 <ul className="text-white list-inline">
 <li><Link href="/company">Company</Link></li>
-<li>Contact Us</li>
+<li><Link href="/contact-us">Contact Us</Link></li>
 <li><Link href="/events">Events</Link></li>
 <li><Link href="/career">Careers</Link></li>
 <li><Link href="/blogs/suntecs-strategic-response-to-covid-19">Covid Response</Link></li>
