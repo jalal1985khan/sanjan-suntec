@@ -230,7 +230,7 @@ onChange={handleChange}
 </Col>
 <Col>
 <div class="form-check mb-3">
-<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked />
+<input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"/>
 <label class="form-check-label" for="flexCheckChecked">
 To subscribe and receive future communication from SunTec, check the box
   </label>
