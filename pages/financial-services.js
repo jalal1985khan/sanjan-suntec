@@ -280,7 +280,7 @@ Your one-stop-solution for all GST and VAT regulatory compliance requirements. C
 </Container>
 <Container className="wbg-gy text-center d-flex flex-column justify-content-center align-items-center" style={{height:10 + 'em'}}>
 <h1 className="fs-4">Accelerating your digital transformation journey has never been this simple!</h1>
-<Button className="b-btn">Discover Now</Button>
+<Link className="b-btn" href="/whitepapers/embarking-on-progressive-modernization-to-build-a-digital-bank">Discover Now</Link>
 </Container>
 <Container className="mb-5 mt-5 text-center">
 {heading && <h2>Our Latest Insights</h2>}
