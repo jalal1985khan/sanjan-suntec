@@ -4,10 +4,30 @@ import Link from 'next/link';
 import configData from "../config.json";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import BootstrapModal from '../components/Modal';
+import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
+import CtaCall from '../components/CtaCall';
+import Breadcum from '../components/Breadcum';
+import Insights from '../utils/FetchInsights';
+import InsightsBtn from '../utils/InsightsBtn';
+
 function LinksExample() {
 
-  const [allInsights, setInsights] = useState([]);
-  const [heading, setHeading] = useState(false); 
+  const router = useRouter()  
+  const [showModal, setShowModal] = useState(false);
+  const PdfLink = '/pdf/SunTec-Indirect-Taxation.pdf';
+  const PostTitle = "Enterprise Indirect Taxation Management";
+  const PostDescription = "Comply with all indirect taxation requirements through an enterprise solution for all aspects of taxation.";
+  const PostImage = '/images/benefits_and_loyalty_management.jpg'; 
+
+  const handleShowModal = () => {
+    setShowModal(true);
+};
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+};
 
   const fetchInsights = async () => {
     let url = "";
@@ -29,17 +49,44 @@ function LinksExample() {
   },[]);
   return (
 <>
-<Header/>
-<Container fluid className="breadcum">
-<Breadcrumb >
-      <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-      <Breadcrumb.Item href="/relationship-based-pricing-management" active>
-      Enterprise Indirect Taxation Management
-      </Breadcrumb.Item>
-    </Breadcrumb>
-</Container>
+<Header />
+<NextSeo
+      title={PostTitle}
+      description={PostDescription}
+      canonical="/{router.asPath}"
+      openGraph={{
+        url: `${router.asPath}`,
+        title: `${PostTitle}`,
+        description: `${PostDescription}`,
+        images: [
+          {
+            url: `${PostImage}`,
+            width: 800,
+            height: 600,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          {
+            url: `${PostImage}`,
+            width: 900,
+            height: 800,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          { url: `${PostImage}` },
+          { url: `${PostImage}` },
+        ],
+        siteName: 'SunTec Group',
+      }}
+      twitter={{
+        handle: '@handle',
+        site: '@site',
+        cardType: 'summary_large_image',
+      }}
+    />         
+      <Breadcum PostTitle={PostTitle} />
 <Container className="p-3 b-banner" fluid style={{ 
-      backgroundImage: `url("/images/benefits_and_loyalty_management.jpg")` 
+      backgroundImage: `url(${PostImage})` 
     }}>
 
 <Row>
@@ -48,7 +95,8 @@ function LinksExample() {
 <h1>Enterprise Indirect Taxation Management</h1>
 <p>Comply with all indirect taxation requirements through an
 enterprise solution for all aspects of taxation.</p>
-<Link href="/" className="r-btn">Read the datasheet</Link>
+<button onClick={handleShowModal} className="r-btn">Read the Datasheet</button>
+<BootstrapModal show={showModal} handleClose={handleCloseModal} pdfLink={PdfLink} title={PostTitle} />
 </div>
 </Col> 
 <Col></Col> 
@@ -67,7 +115,7 @@ enterprise solution for all aspects of taxation.</p>
 </Row>    
 </Container>
 
-
+<InsightsBtn tags='332'/>
 <Container className="mb-5">
 <h1 className="fs-2 mt-5 mb-5">Features of SunTec&apos;s Tax Management</h1>
 <Row>
@@ -132,7 +180,7 @@ enterprise solution for all aspects of taxation.</p>
 <Col>
 </Col>
 </Row>
-<Container className="text-center mt-5"><Button className="b-btn">Learn more about our GCC VAT Solution</Button></Container>
+<Container className="text-center mt-5"><Link className="b-btn" href="/suntec-vat/">Learn more about our GCC VAT Solution</Link></Container>
 
 </Container>
 <Container>
@@ -217,49 +265,8 @@ enterprise solution for all aspects of taxation.</p>
 </Col>
 </Row>
 </Container>
-<Container className="wbg-gy text-center d-flex flex-column justify-content-center align-items-center" style={{height:10 + 'em'}}>
-<h1 className="fs-4">Be up to speed in a changing market with SunTec Xelerate by your side.</h1>
-<Button className="b-btn">Accelerate with SunTec Xelerate!</Button>
-</Container>
-<Container className="mb-5 mt-5 text-center">
-{heading && <h2>Our Latest Insights</h2>}
-<Container>
-  <Row>
-  {
-
-allInsights.map((post) => {
-  //console.log(post);
-
-  const Type =  post['type'];
-  const Pslug =  post['slug'];
-  let Links;
-  if(Type =='page'){
-    Links = Pslug;
-  }
-  else{
-    Links = Type + '/'+ Pslug;
-  }
-return (
-<Col key={post['id']} sm={4}>
-<Link 
-href={Links}
-className="pr-text text-decoration-none">
-<Card>
-      <Card.Img variant="top" src={post['featured_img_src']}/>
-      <Card.Body className="text-start" style={{height: 6 +'em'}}>
-        <Card.Title>{post['title']}</Card.Title>
-      </Card.Body>
-      <Card.Body  className="text-start">
-        <Card.Link >Read More</Card.Link>
-      </Card.Body>
-    </Card>
-</Link> 
-    </Col>
-  )
-})}
-</Row>
-</Container>
-</Container>
+<CtaCall text="Be up to speed in a changing market with SunTec Xelerate by your side." btn="Accelerate with SunTec Xelerate!" url="/request-a-demo/"/>      
+<Insights tags="332"/>
 <Footer/>
 </>
 

@@ -5,14 +5,21 @@ import configData from "../config.json";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BootstrapModal from '../components/Modal';
+import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
+import CallCta from '../components/CtaCall'
+import Insights from '../utils/FetchInsights';
+import BtnInsights from '../utils/InsightsBtn' 
 
 
 
 function LinksExample() {
-
-  const [allInsights, setInsights] = useState([]);
-  const [heading, setHeading] = useState(false); 
+  const router = useRouter()
   const [showModal, setShowModal] = useState(false);
+  const PdfLink = '/pdf/Deal-management-datasheet.pdf';
+  const PostTitle = "Deal Management";
+  const PostDescription = "Automate end-to-end deal management process, provide flexibility to create customer-specific deals, mitigate conduct risk and reduce revenue leakage while ensuring price transparency and policy compliance.";
+  const PostImage = '/images/Deal-Management.jpg';
 
   const handleShowModal = () => {
     setShowModal(true);
@@ -22,46 +29,64 @@ function LinksExample() {
     setShowModal(false);
 };
 
-  const fetchInsights = async () => {
-    let url = "";
-    url = `${configData.SERVER_URL}all-insights?tag=327`;
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      console.log(data.length);
-      setInsights(data);
-      if(data.length > 1){
-        setHeading(true);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    fetchInsights();
-  },[]);
+ 
   return (
 <>
-<Header/>
+<Header />
+<NextSeo
+      title={PostTitle}
+      description={PostDescription}
+      canonical="/{router.asPath}"
+      openGraph={{
+        url: `${router.asPath}`,
+        title: `${PostTitle}`,
+        description: `${PostDescription}`,
+        images: [
+          {
+            url: `${PostImage}`,
+            width: 800,
+            height: 600,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          {
+            url: `${PostImage}`,
+            width: 900,
+            height: 800,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          { url: `${PostImage}` },
+          { url: `${PostImage}` },
+        ],
+        siteName: 'SunTec Group',
+      }}
+      twitter={{
+        handle: '@handle',
+        site: '@site',
+        cardType: 'summary_large_image',
+      }}
+    />      
+
 <Container fluid className="breadcum">
 <Breadcrumb >
-      <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-      <Breadcrumb.Item href="/dynamic-offer-management" active>
+      <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
+      <Breadcrumb.Item href={router.asPath} active>
       Deal Management
       </Breadcrumb.Item>
     </Breadcrumb>
 </Container>
 <Container className="p-3 b-banner" fluid style={{ 
-      backgroundImage: `url("/images/Deal-Management.jpg")` 
+      backgroundImage: `url(${PostImage})` 
     }}>
 
 <Row>
 <Col>
 <div className="b-text">
-<h1>Deal Management</h1>
+<h1>Deal Management </h1>
 <p>Automate end-to-end deal management process, provide flexibility to create customer-specific deals, mitigate conduct risk and reduce revenue leakage while ensuring price transparency and policy compliance.</p>
 <button onClick={handleShowModal} className="r-btn">Read the Datasheet</button>
-<BootstrapModal show={showModal} handleClose={handleCloseModal} />
+<BootstrapModal show={showModal} handleClose={handleCloseModal} pdfLink={PdfLink} title={PostTitle} />
 </div>
 </Col> 
 <Col></Col> 
@@ -79,13 +104,7 @@ function LinksExample() {
 </Row>    
 </Container>
 
-<Container className="wbg-sun text-center d-flex flex-column justify-content-center" style={{height: 10 +'em'}}>
-<h2 className="text-white fs-2 mb-4">Discover related resources curated just for you</h2>
-<Row className="center">
-          <Col sm={3}><Button className="w-btn">eBook</Button></Col>
-          <Col sm={3}><Button className="w-btn">Case Study</Button></Col>    
-</Row>
-</Container>      
+<BtnInsights tags='327' />     
       
 <Container className="mb-5">
 
@@ -251,51 +270,9 @@ function LinksExample() {
 <Col></Col>
 <Col></Col>
 </Row>
-
 </Container>
-<Container className="wbg-gy text-center d-flex flex-column justify-content-center align-items-center" style={{height:10 + 'em'}}>
-<h1 className="fs-4">Know your customers better and deliver hyper personalized offerings with SunTec.</h1>
-<Button className="b-btn">Start a conversation</Button>
-</Container>
-<Container className="mb-5 mt-5 text-center">
-{heading && <h2>Our Latest Insights</h2>}
-<Container>
-  <Row>
-  {
-
-allInsights.map((post) => {
-  //console.log(post);
-
-  const Type =  post['type'];
-  const Pslug =  post['slug'];
-  let Links;
-  if(Type =='page'){
-    Links = Pslug;
-  }
-  else{
-    Links = Type + '/'+ Pslug;
-  }
-return (
-<Col key={post['id']} sm={4}>
-<Link 
-href={Links}
-className="pr-text text-decoration-none">
-<Card>
-      <Card.Img variant="top" src={post['featured_img_src']}/>
-      <Card.Body className="text-start" style={{height: 6 +'em'}}>
-        <Card.Title>{post['title']}</Card.Title>
-      </Card.Body>
-      <Card.Body  className="text-start">
-        <Card.Link >Read More</Card.Link>
-      </Card.Body>
-    </Card>
-</Link> 
-    </Col>
-  )
-})}
-</Row>
-</Container>
-</Container>
+<CallCta text='Know your customers better and deliver hyper personalized offerings with SunTec.' btn='Start a conversation' url='/contact-us'/>        
+<Insights tags="327"/>
 <Footer/>
 </>
 

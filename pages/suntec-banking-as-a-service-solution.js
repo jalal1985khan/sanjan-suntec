@@ -4,14 +4,24 @@ import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BootstrapModal from '../components/Modal';
+import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
+import CtaCall from '../components/CtaCall';
+import Breadcum from '../components/Breadcum';
+import Insights from '../utils/FetchInsights';
+import InsightsBtn from '../utils/InsightsBtn';
+import ShortCard from '../utils/ShortCard';
 
 function LinksExample() {
 
-  const [allInsights, setInsights] = useState([]);
-  const [heading, setHeading] = useState(false);
+  const router = useRouter()  
   const [showModal, setShowModal] = useState(false);
-  const PdfLink = 'https://www.suntecgroup.com/wp-content/uploads/2023/02/SunTec_BaaS-datasheet.pdf';
+  const PdfLink = 'pdf/SunTec_BaaS-datasheet.pdf';
   const PostTitle = "SunTec Banking-as-a-Service Solution";
+  const PostDescription = "Deliver lifecycle experiences through an ecosystem of partners";
+  const PostImage = '/images/SunTec-Banking-as-a-Service-Solution.jpg';  
+
+
 
   const handleShowModal = () => {
     setShowModal(true);
@@ -25,16 +35,43 @@ function LinksExample() {
   return (
 <>
 <Header/>
-<Container fluid className="breadcum">
-<Breadcrumb >
-      <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-      <Breadcrumb.Item href="/personalization" active>
-      SunTec Banking-as-a-Service Solution
-      </Breadcrumb.Item>
-    </Breadcrumb>
-</Container>
+<NextSeo
+      title={PostTitle}
+      description={PostDescription}
+      canonical="/{router.asPath}"
+      openGraph={{
+        url: `${router.asPath}`,
+        title: `${PostTitle}`,
+        description: `${PostDescription}`,
+        images: [
+          {
+            url: `${PostImage}`,
+            width: 800,
+            height: 600,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          {
+            url: `${PostImage}`,
+            width: 900,
+            height: 800,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          { url: `${PostImage}` },
+          { url: `${PostImage}` },
+        ],
+        siteName: 'SunTec Group',
+      }}
+      twitter={{
+        handle: '@handle',
+        site: '@site',
+        cardType: 'summary_large_image',
+      }}
+    />       
+<Breadcum PostTitle={PostTitle} />
 <Container className="p-3 b-banner" fluid style={{ 
-      backgroundImage: `url("/images/SunTec-Banking-as-a-Service-Solution.jpg")` 
+      backgroundImage: `url(${PostImage})` 
     }}>
 
 <Row>
@@ -139,7 +176,7 @@ As customer-centric strategies rule the roost, the business of banking is moving
           </Col>
         </Row>  
       </Container>
-<Container style={{background:'#F1E4F2'}} className="pb-5 pt-5">
+<Container style={{background:'#F1E4F2'}} className="pb-5 pt-5 mb-5">
  <h2 className="pb-4">Business Benefits</h2>       
  <Row>  
 <Col sm={6} >
@@ -178,48 +215,29 @@ As customer-centric strategies rule the roost, the business of banking is moving
 </Col>          
 </Row>        
 </Container>
-
-<Container className="wbg-gy text-center d-flex flex-column justify-content-center align-items-center mt-5" style={{height:10 + 'em'}}>
-<h1 className="fs-4">Rounding up the pulse of the industry as we go along.</h1>
-<Button className="b-btn">Be up to date now!</Button>
-</Container>      
+      <CtaCall
+        text="Rounding up the pulse of the industry as we go along."
+        btn="Be up to date now!"
+        url="/insights/" />
+   
 
 <Container className="wbg-gy mt-5 pb-5 pt-5">        
 <h2 className="pb-3">Products That Enable this Solution</h2>
 <Row>  
-<Col sm={6} >
-<Card className="d-flex flex-row c-height" style={{backgroundColor:'#F4F4F4'}}>
-      <Card.Img className="card-icon-left" src="images/1.png"/>
-      <Card.Body>
-        <Card.Title>Ecosystem Management and Monetization</Card.Title>
-      </Card.Body>
-    </Card>
+          <Col sm={6} >
+            <ShortCard title="Ecosystem Management and Monetization" img="images/1.png"/>
 </Col>
-<Col sm={6}>
-<Card className="d-flex flex-row c-height" style={{backgroundColor:'#F4F4F4'}}>
-      <Card.Img className="card-icon-left" src="images/2.png"/>
-      <Card.Body>
-        <Card.Title>Relationship-based Pricing Management</Card.Title>
-      </Card.Body>
-    </Card>
+          <Col sm={6}>
+          <ShortCard title="Relationship-based Pricing Management" img="images/2.png"/>
 </Col>   
 </Row>
 <Row>  
-<Col sm={6}>
-<Card className="d-flex flex-row c-height" style={{backgroundColor:'#F4F4F4'}}>
-      <Card.Img className="card-icon-left" src="images/3.png"/>
-      <Card.Body>
-        <Card.Title>Dynamic Offer Management</Card.Title>
-      </Card.Body>
-    </Card>
+          <Col sm={6}>
+          <ShortCard title="Dynamic Offer Management" img="images/3.png"/>
 </Col>
-<Col sm={6}>
-<Card className="d-flex flex-row c-height" style={{backgroundColor:'#F4F4F4'}}>
-      <Card.Img className="card-icon-left" src="images/4.png"/>
-      <Card.Body>
-        <Card.Title>Enterprise Billing and Statements Management</Card.Title>
-      </Card.Body>
-    </Card>
+          <Col sm={6}>
+          <ShortCard title="Enterprise Billing and Statements Management" img="images/4.png"/>
+
 </Col>   
 </Row>
 </Container>

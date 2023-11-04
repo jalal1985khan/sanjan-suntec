@@ -5,14 +5,19 @@ import configData from "../config.json";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BootstrapModal from '../components/Modal';
+import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
+import CallCta from '../components/CtaCall'
+import Insights from '../utils/FetchInsights';
+import BtnInsights from '../utils/InsightsBtn'
 
 function LinksExample() {
-
-  const [allInsights, setInsights] = useState([]);
-  const [heading, setHeading] = useState(false);
+  const router = useRouter()
   const [showModal, setShowModal] = useState(false);
-  const PdfLink = 'https://www.suntecgroup.com/wp-content/uploads/2022/01/Enterprise-Product-Management.pdf';
+  const PdfLink = '/pdf/Enterprise-Product-Management.pdf';
   const PostTitle = "Enterprise Product Management";
+  const PostDescription = "Establish customer choice at the heart of your enterprise and enable right selling through the creation of an enterprise master catalog for all products and services.";
+  const PostImage = 'images/enterprise_product_management_banner.png';
 
   const handleShowModal = () => {
     setShowModal(true);
@@ -22,46 +27,63 @@ function LinksExample() {
     setShowModal(false);
 };
 
-  const fetchInsights = async () => {
-    let url = "";
-    url = `${configData.SERVER_URL}all-insights?tag=325`;
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      console.log(data.length);
-      setInsights(data);
-      if(data.length > 1){
-        setHeading(true);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    fetchInsights();
-  },[]);
-
+  
 
 
   return (
 <>
-<Header/>
+<Header />
+<NextSeo
+      title={PostTitle}
+      description={PostDescription}
+      canonical="/{router.asPath}"
+      openGraph={{
+        url: `${router.asPath}`,
+        title: `${PostTitle}`,
+        description: `${PostDescription}`,
+        images: [
+          {
+            url: `${PostImage}`,
+            width: 800,
+            height: 600,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          {
+            url: `${PostImage}`,
+            width: 900,
+            height: 800,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          { url: `${PostImage}` },
+          { url: `${PostImage}` },
+        ],
+        siteName: 'SunTec Group',
+      }}
+      twitter={{
+        handle: '@handle',
+        site: '@site',
+        cardType: 'summary_large_image',
+      }}
+    /> 
+      
 <Container fluid className="breadcum">
 <Breadcrumb >
-      <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
+      <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
       <Breadcrumb.Item href="/enterprise-product-management" active>
       Enterprise Product Management
       </Breadcrumb.Item>
     </Breadcrumb>
 </Container>
 <Container className="p-3 b-banner" fluid style={{ 
-      backgroundImage: `url("/images/enterprise_product_management_banner.png")` 
+      backgroundImage: `url(${PostImage})` 
     }}>
 
 <Row>
 <Col>
 <div className="b-text">
-<h1>Enterprise Product Management -Test</h1>
+<h1>Enterprise Product Management</h1>
 <p>Establish customer choice at the heart of your enterprise and enable right selling through the creation of an enterprise master catalog for all products and services.</p>
 <button onClick={handleShowModal} className="r-btn">Read the Datasheet</button>
 <BootstrapModal show={showModal} handleClose={handleCloseModal} pdfLink={PdfLink} title={PostTitle} />
@@ -83,8 +105,9 @@ SunTec&apos;s Xelerate platform gives the flexibility to define any product or s
 </Row>    
 </Container>
 
-<Container className="mb-5">
+<BtnInsights tags='325' />    
 
+<Container className="mb-5">
 <h1 className="fs-2 mt-5 mb-5">Features of SunTec&apos;s Enterprise Product Management</h1>
 <Row>
 <Col>
@@ -315,49 +338,8 @@ process, from selling to billing
 </Row>
 
 </Container>
-<Container className="wbg-gy text-center d-flex flex-column justify-content-center align-items-center" style={{height:10 + 'em'}}>
-<h1 className="fs-4">Know your customers better and deliver hyper personalized offerings with SunTec.</h1>
-<Button className="b-btn">Start a conversation</Button>
-</Container>
-<Container className="mb-5 mt-5 text-center">
-{heading && <h2>Our Latest Insights</h2>}
-<Container>
-  <Row>
-  {
-
-allInsights.map((post) => {
-  //console.log(post);
-
-  const Type =  post['type'];
-  const Pslug =  post['slug'];
-  let Links;
-  if(Type =='page'){
-    Links = Pslug;
-  }
-  else{
-    Links = Type + '/'+ Pslug;
-  }
-return (
-<Col key={post['id']} sm={4}>
-<Link 
-href={Links}
-className="pr-text text-decoration-none">
-<Card>
-      <Card.Img variant="top" src={post['featured_img_src']}/>
-      <Card.Body className="text-start" style={{height: 6 +'em'}}>
-        <Card.Title>{post['title']}</Card.Title>
-      </Card.Body>
-      <Card.Body  className="text-start">
-        <Card.Link >Read More</Card.Link>
-      </Card.Body>
-    </Card>
-</Link> 
-    </Col>
-  )
-})}
-</Row>
-</Container>
-</Container>
+<CallCta text='Know your customers better and deliver hyper personalized offerings with SunTec.' btn='Start a conversation' url='/contact-us'/>      
+<Insights tags='325'/>
 
 
 <Footer/>

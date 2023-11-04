@@ -4,43 +4,74 @@ import Link from 'next/link';
 import configData from "../config.json";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import BootstrapModal from '../components/Modal';
+import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
+import CtaCall from '../components/CtaCall';
+import Breadcum from '../components/Breadcum';
+import Insights from '../utils/FetchInsights';
+import InsightsBtn from '../utils/InsightsBtn';
+
+
 function LinksExample() {
 
-  const [allInsights, setInsights] = useState([]);
-  const [heading, setHeading] = useState(false); 
+  const router = useRouter()  
+  const [showModal, setShowModal] = useState(false);
+  const PdfLink = '/pdf/Relationship-based-Pricing-Management.pdf';
+  const PostTitle = "Relationship-based Pricing Management";
+  const PostDescription = "Bring pricing to the forefront of your customer engagement strategy by creating an enterprise pricing master for fees, rates and charges that win the hearts and minds of your customers.";
+  const PostImage = "/images/relationship_based-pricing_management.jpg"; 
 
-  const fetchInsights = async () => {
-    let url = "";
-    url = `${configData.SERVER_URL}all-insights?tag=328`;
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      console.log(data.length);
-      setInsights(data);
-      if(data.length > 1){
-        setHeading(true);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    fetchInsights();
-  },[]);
+  const handleShowModal = () => {
+    setShowModal(true);
+};
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+}; 
+
+  
 
   return (
 <>
-<Header/>
-<Container fluid className="breadcum">
-<Breadcrumb >
-      <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-      <Breadcrumb.Item href="/relationship-based-pricing-management" active>
-      Relationship-based Pricing Management
-      </Breadcrumb.Item>
-    </Breadcrumb>
-</Container>
+<Header />
+<NextSeo
+      title={PostTitle}
+      description={PostDescription}
+      canonical="/{router.asPath}"
+      openGraph={{
+        url: `${router.asPath}`,
+        title: `${PostTitle}`,
+        description: `${PostDescription}`,
+        images: [
+          {
+            url: `${PostImage}`,
+            width: 800,
+            height: 600,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          {
+            url: `${PostImage}`,
+            width: 900,
+            height: 800,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          { url: `${PostImage}` },
+          { url: `${PostImage}` },
+        ],
+        siteName: 'SunTec Group',
+      }}
+      twitter={{
+        handle: '@handle',
+        site: '@site',
+        cardType: 'summary_large_image',
+      }}
+    />  
+<Breadcum PostTitle={PostTitle}/>
 <Container className="p-3 b-banner" fluid style={{ 
-      backgroundImage: `url("/images/relationship_based-pricing_management.jpg")` 
+      backgroundImage: `url(${PostImage})` 
     }}>
 
 <Row>
@@ -48,7 +79,8 @@ function LinksExample() {
 <div className="b-text">
 <h1>Relationship-based Pricing Management</h1>
 <p>Bring pricing to the forefront of your customer engagement strategy by creating an enterprise pricing master for fees, rates and charges that win the hearts and minds of your customers.</p>
-<Link href="/" className="r-btn">Read the datasheet</Link>
+<button onClick={handleShowModal} className="r-btn">Read the Datasheet</button>
+<BootstrapModal show={showModal} handleClose={handleCloseModal} pdfLink={PdfLink} title={PostTitle} />
 </div>
 </Col> 
 <Col></Col> 
@@ -65,15 +97,7 @@ function LinksExample() {
 </Col>
 </Row>    
 </Container>
-<Container className="wbg-sun text-center d-flex flex-column justify-content-center" style={{height: 10 +'em'}}>
-<h2 className="text-white fs-2 mb-4">Discover related resources curated just for you</h2>
-<Row>
-<Col><Button className="w-btn">Articles</Button></Col>
-<Col><Button className="w-btn">White Papers</Button></Col>
-<Col><Button className="w-btn">Case Studeis</Button></Col>    
-</Row>
-
-</Container>
+<InsightsBtn tags="328"/> 
 <Container className="mb-5">
 <h1 className="fs-2 mt-5 mb-5">Features of SunTec&apos;s Relationship-based Pricing Management</h1>
 <Row>
@@ -186,7 +210,7 @@ customer and customer groups including complex relational conditions
       <Card.Img className="card-icon-left" src="/images/icon_4_1.png" />
       <Card.Body className="c_body">
         <Card.Text>
-        Drive customer choice by offering contextual solutions
+        Drive customer engagement through hyper-personalized and contextual pricing
         </Card.Text>
       </Card.Body>
     </Card>
@@ -196,7 +220,7 @@ customer and customer groups including complex relational conditions
 <Card.Img className="card-icon-left" src="/images/icon_4_2.png" />
       <Card.Body className="c_body">
         <Card.Text>
-        Reduce time and cost to market of specific offers and campaigns
+        Improve customer retention through choice, transparency and fairness for each customer
         </Card.Text>
       </Card.Body>
     </Card>
@@ -206,7 +230,7 @@ customer and customer groups including complex relational conditions
 <Card.Img className="card-icon-left" src="/images/icon_4_3.png" />
       <Card.Body className="c_body">
         <Card.Text>
-        Drive overall relationship value through cross bundle offers and benefits
+        Enhance agility and flexibility through a unified and enterprise capability for all aspects of pricing
         </Card.Text>
       </Card.Body>
     </Card>
@@ -219,7 +243,7 @@ customer and customer groups including complex relational conditions
 <Card.Img className="card-icon-left" src="/images/icon_4_4.png" />
       <Card.Body className="c_body">
         <Card.Text>
-        Improve quality of revenue through automated management of offers including enrolment/de-enrolment
+        Improve revenue quality through insight-driven decisions, enabling right pricing
         </Card.Text>
       </Card.Body>
     </Card>
@@ -229,7 +253,7 @@ customer and customer groups including complex relational conditions
 <Card.Img className="card-icon-left" src="/images/icon_4_5.png" />
       <Card.Body className="c_body">
         <Card.Text>
-        Improve offer quality and breadth by co-innovating with third party partners
+        Reduce operational risk and cost through automation and enhanced control
         </Card.Text>
       </Card.Body>
     </Card>
@@ -239,7 +263,7 @@ customer and customer groups including complex relational conditions
 <Card.Img className="card-icon-left" src="/images/icon_4_6.png" />
       <Card.Body className="c_body">
         <Card.Text>
-        Empower front end staff to service customers through specific and personalized offers
+        Reduce conduct risk and ensure compliance with regulatory guidelines through end-to-end auditing, traceability and enhanced controls
         </Card.Text>
       </Card.Body>
     </Card>
@@ -247,63 +271,14 @@ customer and customer groups including complex relational conditions
 </Row>
 <Row>
 <Col>
-<Card className="c_shadow" style={{height:15+ 'em'}}>
-<Card.Img className="card-icon-left" src="/images/icon_4_7.png" />
-      <Card.Body className="c_body">
-        <Card.Text>
-        Reduce operational and revenue risk through end-to-end automation
-        </Card.Text>
-      </Card.Body>
-    </Card>
 </Col>
 <Col></Col>
 <Col></Col>
 </Row>
 
 </Container>
-<Container className="wbg-gy text-center d-flex flex-column justify-content-center align-items-center" style={{height:10 + 'em'}}>
-<h1 className="fs-4">Know your customers better and deliver hyper personalized offerings with SunTec.</h1>
-<Button className="b-btn">Start a conversation</Button>
-</Container>
-<Container className="mb-5 mt-5 text-center">
-{heading && <h2>Our Latest Insights</h2>}
-<Container>
-  <Row>
-  {
-
-allInsights.map((post) => {
-  //console.log(post);
-
-  const Type =  post['type'];
-  const Pslug =  post['slug'];
-  let Links;
-  if(Type =='page'){
-    Links = Pslug;
-  }
-  else{
-    Links = Type + '/'+ Pslug;
-  }
-return (
-<Col key={post['id']} sm={4}>
-<Link 
-href={Links}
-className="pr-text text-decoration-none">
-<Card>
-      <Card.Img variant="top" src={post['featured_img_src']}/>
-      <Card.Body className="text-start" style={{height: 6 +'em'}}>
-        <Card.Title>{post['title']}</Card.Title>
-      </Card.Body>
-      <Card.Body  className="text-start">
-        <Card.Link >Read More</Card.Link>
-      </Card.Body>
-    </Card>
-</Link> 
-    </Col>
-  )
-})}
-</Row>
-</Container>
-</Container>
+<CtaCall text="Discover the value customer-centricity brings to your business" btn="Download our whitepaper here" url="/whitepapers/dont-just-talk-customer-centricity-walk-it/"/>      
+<Insights tags="328"/>
 
 <Footer/>
 </>

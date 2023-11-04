@@ -4,48 +4,64 @@ import Link from 'next/link';
 import configData from "../config.json";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
+import CtaCall from '../components/CtaCall';
+import Breadcum from '../components/Breadcum';
+import Insights from '../utils/FetchInsights';
+import InsightsBtn from '../utils/InsightsBtn';
+
+
 function LinksExample() {
 
 
-  const [allInsights, setInsights] = useState([]);
-  const [heading, setHeading] = useState(false); 
-
-  const fetchInsights = async () => {
-    let url = "";
-    url = `${configData.SERVER_URL}all-insights?tag=324`;
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      console.log(data.length);
-      setInsights(data);
-      if(data.length > 1){
-        setHeading(true);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    fetchInsights();
-  },[]);
-
-
+  const router = useRouter()  
+  const PdfLink = '/pdf/Relationship-based-Pricing-Management.pdf';
+  const PostTitle = "Redefining Value Chain Management";
+  const PostDescription = "A low risk approach to identify and mitigate revenue leakages, rationalize products, connect with external partner ecosystems and present highly contextual offers.";
+  const PostImage = "/images/insurance_banner.jpeg"; 
 
   return (
 <>
-<Header/>
-<Container fluid className="breadcum">
-<Breadcrumb >
-      <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-      <Breadcrumb.Item href="industries-insurance" active>
-      Redefining Value Chain Management
-      </Breadcrumb.Item>
-    </Breadcrumb>
-</Container>
+      <Header />
+      <NextSeo
+      title={PostTitle}
+      description={PostDescription}
+      canonical="/{router.asPath}"
+      openGraph={{
+        url: `${router.asPath}`,
+        title: `${PostTitle}`,
+        description: `${PostDescription}`,
+        images: [
+          {
+            url: `${PostImage}`,
+            width: 800,
+            height: 600,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          {
+            url: `${PostImage}`,
+            width: 900,
+            height: 800,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          { url: `${PostImage}` },
+          { url: `${PostImage}` },
+        ],
+        siteName: 'SunTec Group',
+      }}
+      twitter={{
+        handle: '@handle',
+        site: '@site',
+        cardType: 'summary_large_image',
+      }}
+    />  
+<Breadcum PostTitle={PostTitle}/>
 <Container className="p-3 b-banner" fluid style={{ 
-      backgroundImage: `url("/images/insurance_banner.jpeg")` 
+      backgroundImage: `url(${PostImage})` 
     }}>
-
 <Row>
 <Col>
 <div className="b-text">
@@ -211,51 +227,8 @@ function LinksExample() {
 </Row>
 
 </Container>
-<Container className="wbg-gy text-center d-flex flex-column justify-content-center align-items-center" style={{height:10 + 'em'}}>
-<h1 className="fs-4">Drive organizational success with personalization and improve customer experience journeys.</h1>
-<Button className="b-btn">Tell me more</Button>
-</Container>
-<Container className="mb-5 mt-5 text-center">
-{heading && <h2>Our Latest Insights</h2>}
-<Container>
-  <Row>
-  {
-
-allInsights.map((post) => {
-  //console.log(post);
-
-  const Type =  post['type'];
-  const Pslug =  post['slug'];
-  let Links;
-  if(Type =='page'){
-    Links = Pslug;
-  }
-  else{
-    Links = Type + '/'+ Pslug;
-  }
-return (
-<Col key={post['id']} sm={4}>
-<Link 
-href={Links}
-className="pr-text text-decoration-none">
-<Card>
-      <Card.Img variant="top" src={post['featured_img_src']}/>
-      <Card.Body className="text-start" style={{height: 6 +'em'}}>
-        <Card.Title>{post['title']}</Card.Title>
-      </Card.Body>
-      <Card.Body  className="text-start">
-        <Card.Link >Read More</Card.Link>
-      </Card.Body>
-    </Card>
-</Link> 
-    </Col>
-  )
-})}
-</Row>
-</Container>
-</Container>
-
-
+<CtaCall text='Drive organizational success with personalization and improve customer experience journeys.' btn='Tell me more' url='/whitepapers/personalization-key-to-the-success-of-insurance-companies-in-the-new-world/'/>
+<Insights tags='324'/>
 <Footer/>
 </>
 

@@ -1,46 +1,73 @@
-import {Container,Row, Col,Image,Breadcrumb,Card, Button} from 'react-bootstrap';
+import {Container,Row, Col,Breadcrumb,Card, Button} from 'react-bootstrap';
 import { useEffect, useState } from "react";
-import Link from 'next/link';
 import configData from "../config.json";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import BootstrapModal from '../components/Modal';
+import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
+import CtaCall from '../components/CtaCall';
+import Insights from '../utils/FetchInsights';
+import Breadcum from '../components/Breadcum';
+import InsightsBtn from '../utils/InsightsBtn';
+
 function LinksExample() {
+  
+  const router = useRouter()
+  const [showModal, setShowModal] = useState(false);
+  const PdfLink = '/pdf/Enterprise-Billing-and-Statement-Managemnet-datasheet.pdf';
+  const PostTitle = "Enterprise Billing and Statements Management";
+  const PostDescription = "Increase customer trust and transparency through accurate billing and prevent revenue leakage. Build an enterprise capability for multi-product, multi-entity and hierarchical invoicing for all stakeholders.";
+  const PostImage = '/images/enterprise_billing_and_statements_management.jpg';
 
-  const [allInsights, setInsights] = useState([]);
-  const [heading, setHeading] = useState(false); 
+  const handleShowModal = () => {
+    setShowModal(true);
+};
 
-  const fetchInsights = async () => {
-    let url = "";
-    url = `${configData.SERVER_URL}all-insights?tag=329`;
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      console.log(data.length);
-      setInsights(data);
-      if(data.length > 1){
-        setHeading(true);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    fetchInsights();
-  },[]);
+  const handleCloseModal = () => {
+    setShowModal(false);
+};
 
   return (
 <>
-<Header/>
-<Container fluid className="breadcum">
-<Breadcrumb >
-      <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-      <Breadcrumb.Item href="/relationship-based-pricing-management" active>
-      Enterprise Billing and Statements Management
-      </Breadcrumb.Item>
-    </Breadcrumb>
-</Container>
+      <Header />
+      <NextSeo
+      title={PostTitle}
+      description={PostDescription}
+      canonical="/{router.asPath}"
+      openGraph={{
+        url: `${router.asPath}`,
+        title: `${PostTitle}`,
+        description: `${PostDescription}`,
+        images: [
+          {
+            url: `${PostImage}`,
+            width: 800,
+            height: 600,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          {
+            url: `${PostImage}`,
+            width: 900,
+            height: 800,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          { url: `${PostImage}` },
+          { url: `${PostImage}` },
+        ],
+        siteName: 'SunTec Group',
+      }}
+      twitter={{
+        handle: '@handle',
+        site: '@site',
+        cardType: 'summary_large_image',
+      }}
+    /> 
+<Breadcum PostTitle={PostTitle}/>
 <Container className="p-3 b-banner" fluid style={{ 
-      backgroundImage: `url("/images/enterprise_billing_and_statements_management.jpg")` 
+      backgroundImage: `url(${PostImage})` 
     }}>
 
 <Row>
@@ -48,7 +75,8 @@ function LinksExample() {
 <div className="b-text">
 <h1>Enterprise Billing and Statements Management</h1>
 <p>Increase customer trust and transparency through accurate billing and prevent revenue leakage. Build an enterprise capability for multi-product, multi-entity and hierarchical invoicing for all stakeholders.</p>
-<Link href="/" className="r-btn">Read the datasheet</Link>
+<button onClick={handleShowModal} className="r-btn">Read the Datasheet</button>
+<BootstrapModal show={showModal} handleClose={handleCloseModal} pdfLink={PdfLink} title={PostTitle} />
 </div>
 </Col> 
 <Col></Col> 
@@ -67,6 +95,8 @@ SunTec&apos;s Enterprise Billing and Statements Management on SunTec Xelerate pl
 </Col>
 </Row>    
 </Container>
+
+<InsightsBtn tags='329'/>
 
 <Container className="mb-5">
 <h1 className="fs-2 mt-5 mb-5">Features of SunTec&apos;s Enterprise Billing & Statements Management</h1>
@@ -247,49 +277,8 @@ SunTec&apos;s Enterprise Billing and Statements Management on SunTec Xelerate pl
 </Row>
 
 </Container>
-<Container className="wbg-gy text-center d-flex flex-column justify-content-center align-items-center" style={{height:10 + 'em'}}>
-<h1 className="fs-4">Leave the hard work to us. With SunTec Xelerate, drive customer engagement and revenue.</h1>
-<Button className="b-btn">What? How? I want to know more</Button>
-</Container>
-<Container className="mb-5 mt-5 text-center">
-{heading && <h2>Our Latest Insights</h2>}
-<Container>
-  <Row>
-  {
-
-allInsights.map((post) => {
-  //console.log(post);
-
-  const Type =  post['type'];
-  const Pslug =  post['slug'];
-  let Links;
-  if(Type =='page'){
-    Links = Pslug;
-  }
-  else{
-    Links = Type + '/'+ Pslug;
-  }
-return (
-<Col key={post['id']} sm={4}>
-<Link 
-href={Links}
-className="pr-text text-decoration-none">
-<Card>
-      <Card.Img variant="top" src={post['featured_img_src']}/>
-      <Card.Body className="text-start" style={{height: 6 +'em'}}>
-        <Card.Title>{post['title']}</Card.Title>
-      </Card.Body>
-      <Card.Body  className="text-start">
-        <Card.Link >Read More</Card.Link>
-      </Card.Body>
-    </Card>
-</Link> 
-    </Col>
-  )
-})}
-</Row>
-</Container>
-</Container>
+<CtaCall text='Leave the hard work to us. With SunTec Xelerate, drive customer engagement and revenue.' btn='What? How? I want to know more' url='/contact-us'/>
+<Insights tags="329"/>
 <Footer/>
 </>
 

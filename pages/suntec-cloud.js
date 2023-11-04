@@ -4,51 +4,63 @@ import Link from 'next/link';
 import configData from "../config.json";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
+import CtaCall from '../components/CtaCall';
+import Breadcum from '../components/Breadcum';
+import Insights from '../utils/FetchInsights';
+import InsightsBtn from '../utils/InsightsBtn';
 
 
 const Cloud = () => {
 
-  const [allInsights, setInsights] = useState([]);
-  const [heading, setHeading] = useState(false); 
-
-  const fetchInsights = async () => {
-    let url = "";
-    url = `${configData.SERVER_URL}all-insights?tag=321`;
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      console.log(data.length);
-      setInsights(data);
-      if(data.length > 1){
-        setHeading(true);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-
-
-  useEffect(() => {
-    fetchInsights();
-  },[]);
-
-
+  const router = useRouter()  
+  const PdfLink = '';
+  const PostTitle = "SunTec Cloud";
+  const PostDescription = "Capitalize on flexibility, improve time to market, and ensure enhanced security. Make your enterprise’s cloud journey seamless.";
+  const PostImage = "/images/SaaS.jpg"; 
 
   return (
     <>
       <Header />
-      <Container fluid className="breadcum">
-        <Breadcrumb >
-          <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="/company" active>
-          SunTec Cloud  
-          </Breadcrumb.Item>
-        </Breadcrumb>
-      </Container>
-      <Container className="p-3 b-banner" fluid style={{
-        backgroundImage: `url("/images/SaaS.jpg")`
-      }}>
+      <NextSeo
+      title={PostTitle}
+      description={PostDescription}
+      canonical="/{router.asPath}"
+      openGraph={{
+        url: `${router.asPath}`,
+        title: `${PostTitle}`,
+        description: `${PostDescription}`,
+        images: [
+          {
+            url: `${PostImage}`,
+            width: 800,
+            height: 600,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          {
+            url: `${PostImage}`,
+            width: 900,
+            height: 800,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          { url: `${PostImage}` },
+          { url: `${PostImage}` },
+        ],
+        siteName: 'SunTec Group',
+      }}
+      twitter={{
+        handle: '@handle',
+        site: '@site',
+        cardType: 'summary_large_image',
+      }}
+      /> 
+<Breadcum PostTitle={PostTitle}/>
+<Container className="p-3 b-banner" fluid style={{ 
+      backgroundImage: `url(${PostImage})` 
+    }}>
 
         <Row>
           <Col sm={4}>
@@ -70,10 +82,10 @@ const Cloud = () => {
         <p className="fs-5">The need of the hour for organizations is the adoption of an agile, customer-first business model to thrive in rapidly evolving markets, while optimizing operational efficiency. Cloud-based deployments of business applications is therefore on the rise for some very good reasons – it enhances business and technological agility, accelerates time to market and time-to-value and increases economies of scale.</p>
         <p className="fs-5">SunTec&apos;s flagship platform Xelerate and its products are cloud-enabled and readily compatible with industry leading cloud platforms such as AWS, Microsoft Azure and IBM Cloud. SunTec Xelerate on Cloud is designed and built to ease the stress of cloud adoption that comes with operating in highly regulated markets, to ensure that organizations reap the benefits of this robust platform and products quickly and efficiently without compromising on security, compliance and risk management.</p>
       </Container>
-      <Container fluid className="wbg-gy pt-5 pb-5">
-        <h2 className="text-center">Features</h2>
+      <Container fluid className="wbg-gy pt-1 pb-5">
+        <h2 className="text-center mt-5 mb-5">Features</h2>
         <Row>
-          <Col><Card className="sa_shadow" style={{ height: 15 + 'em' }}>
+          <Col><Card className="sa_shadow" style={{ height: 34 + 'em' }}>
             <Card.Img className="card-icon-left" src="/images/cloud_icon_1.png" />
             <Card.Body className="c_body">
               <Card.Title className="mb-4 fs-3">Cloud Agnostic</Card.Title>
@@ -81,7 +93,7 @@ const Cloud = () => {
             </Card.Body>
           </Card>
           </Col>
-          <Col><Card className="sa_shadow" style={{ height: 18 + 'em' }}>
+          <Col><Card className="sa_shadow" style={{ height: 34 + 'em' }}>
             <Card.Img className="card-icon-left" src="/images/cloud_icon_2.png" />
             <Card.Body className="c_body">
               <Card.Title className="mb-4 fs-3">Multi-Cloud Extensibility</Card.Title>
@@ -89,7 +101,7 @@ const Cloud = () => {
             </Card.Body>
           </Card>
           </Col>
-          <Col><Card className="sa_shadow" style={{ height: 18 + 'em' }}>
+          <Col><Card className="sa_shadow" style={{ height: 34 + 'em' }}>
             <Card.Img className="card-icon-left" src="/images/cloud_icon_3.png" />
             <Card.Body className="c_body">
               <Card.Title className="mb-4 fs-3">On Demand Scalability</Card.Title>
@@ -107,7 +119,7 @@ const Cloud = () => {
             </Card.Body>
           </Card>
           </Col>
-          <Col><Card className="" style={{ height: 50 + 'em', padding: 21 + 'px' }}>
+          <Col><Card className="sa_shadow" style={{ height: 50 + 'em', padding: 21 + 'px' }}>
             <Card.Img className="card-icon-left" src="/images/cloud_icon_5.png" />
             <Card.Body className="c_body">
               <Card.Title className="mb-4 fs-3">High Availability</Card.Title>
@@ -115,7 +127,7 @@ const Cloud = () => {
             </Card.Body>
           </Card>
           </Col>
-          <Col><Card className="sa_shadow">
+          <Col><Card className="sa_shadow" style={{ height: 50 + 'em', padding: 21 + 'px' }}>
             <Card.Img className="card-icon-left" src="/images/cloud_icon_6.png" />
             <Card.Body className="c_body">
               <Card.Title className="mb-4 fs-3">Easy Migration</Card.Title>
@@ -125,7 +137,7 @@ const Cloud = () => {
           </Col>
         </Row>
         <Row>
-        <Col><Card className="sa_shadow">
+        <Col><Card className="sa_shadow" style={{ height: 34 + 'em' }}>
             <Card.Img className="card-icon-left" src="/images/cloud_icon_7.png" />
             <Card.Body className="c_body">
               <Card.Title className="mb-4 fs-3">Cost Optimization</Card.Title>
@@ -133,7 +145,7 @@ const Cloud = () => {
             </Card.Body>
           </Card>
           </Col>
-          <Col><Card className="sa_shadow">
+          <Col><Card className="sa_shadow" style={{ height: 34 + 'em' }}>
             <Card.Img className="card-icon-left" src="/images/cloud_icon_8.png" />
             <Card.Body className="c_body">
               <Card.Title className="mb-4 fs-3">Collaborative Framework</Card.Title>
@@ -143,50 +155,8 @@ const Cloud = () => {
           </Col>
           <Col></Col>
         </Row>
-      </Container>
-
-      
-      <Container className="mb-5 mt-5 text-center">
-
-{heading && <h2>Our Latest Insights</h2>}
-
-<Container>
-  <Row>
-  {
-
-allInsights.map((post) => {
-  //console.log(post);
-
-  const Type =  post['type'];
-  const Pslug =  post['slug'];
-  let Links;
-  if(Type =='page'){
-    Links = Pslug;
-  }
-  else{
-    Links = Type + '/'+ Pslug;
-  }
-return (
-<Col key={post['id']} sm={4}>
-<Link 
-href={Links}
-className="pr-text text-decoration-none">
-<Card>
-      <Card.Img variant="top" src={post['featured_img_src']}/>
-      <Card.Body className="text-start" style={{height: 6 +'em'}}>
-        <Card.Title>{post['title']}</Card.Title>
-      </Card.Body>
-      <Card.Body  className="text-start">
-        <Card.Link >Read More</Card.Link>
-      </Card.Body>
-    </Card>
-</Link> 
-    </Col>
-  )
-})}
-</Row>
-</Container>
-</Container>      
+      </Container>      
+<Insights tags='321'/>     
       <Footer />
     </>
   )

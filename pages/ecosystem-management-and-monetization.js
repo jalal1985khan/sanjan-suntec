@@ -1,46 +1,74 @@
 import {Container,Row, Col,Image,Breadcrumb,Card, Button} from 'react-bootstrap';
 import { useEffect, useState } from "react";
 import Link from 'next/link';
-import configData from "../config.json";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import BootstrapModal from '../components/Modal';
+import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
+import CtaCall from '../components/CtaCall';
+import Breadcum from '../components/Breadcum';
+import Insights from '../utils/FetchInsights';
+import InsightsBtn from '../utils/InsightsBtn';
+
 function LinksExample() {
 
-  const [allInsights, setInsights] = useState([]);
-  const [heading, setHeading] = useState(false); 
+  const router = useRouter()  
+  const [showModal, setShowModal] = useState(false);
+  const PdfLink = '/pdf/Ecosystem-Management-and-Monetization.pdf';
+  const PostTitle = "Ecosystem Management and Monetization";
+  const PostDescription = "Embrace the open economy – adopt new business models and increase revenue sources. Become a true value aggregator through collaboration and co-innovation.";
+  const PostImage = '/images/ecosystem_management_and_monetization.jpg'; 
 
-  const fetchInsights = async () => {
-    let url = "";
-    url = `${configData.SERVER_URL}all-insights?tag=330`;
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      console.log(data.length);
-      setInsights(data);
-      if(data.length > 1){
-        setHeading(true);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    fetchInsights();
-  },[]);
+  const handleShowModal = () => {
+    setShowModal(true);
+};
 
-  return (
+  const handleCloseModal = () => {
+    setShowModal(false);
+};
+
+  
+return (
 <>
-<Header/>
-<Container fluid className="breadcum">
-<Breadcrumb >
-      <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-      <Breadcrumb.Item href="/relationship-based-pricing-management" active>
-      Ecosystem Management and Monetization
-      </Breadcrumb.Item>
-    </Breadcrumb>
-</Container>
+<Header />
+<NextSeo
+      title={PostTitle}
+      description={PostDescription}
+      canonical="/{router.asPath}"
+      openGraph={{
+        url: `${router.asPath}`,
+        title: `${PostTitle}`,
+        description: `${PostDescription}`,
+        images: [
+          {
+            url: `${PostImage}`,
+            width: 800,
+            height: 600,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          {
+            url: `${PostImage}`,
+            width: 900,
+            height: 800,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          { url: `${PostImage}` },
+          { url: `${PostImage}` },
+        ],
+        siteName: 'SunTec Group',
+      }}
+      twitter={{
+        handle: '@handle',
+        site: '@site',
+        cardType: 'summary_large_image',
+      }}
+    />       
+<Breadcum PostTitle={PostTitle} />
 <Container className="p-3 b-banner" fluid style={{ 
-      backgroundImage: `url("/images/ecosystem_management_and_monetization.jpg")` 
+      backgroundImage: `url(${PostImage})` 
     }}>
 
 <Row>
@@ -48,7 +76,8 @@ function LinksExample() {
 <div className="b-text">
 <h1>Ecosystem Management and Monetization</h1>
 <p>Embrace the open economy – adopt new business models and increase revenue sources. Become a true value aggregator through collaboration and co-innovation.</p>
-<Link href="/" className="r-btn">Read the datasheet</Link>
+<button onClick={handleShowModal} className="r-btn">Read the Datasheet</button>
+<BootstrapModal show={showModal} handleClose={handleCloseModal} pdfLink={PdfLink} title={PostTitle} />
 </div>
 </Col> 
 <Col></Col> 
@@ -67,15 +96,7 @@ function LinksExample() {
 </Col>
 </Row>    
 </Container>
-<Container className="wbg-sun text-center d-flex flex-column justify-content-center" style={{height: 10 +'em'}}>
-<h2 className="text-white fs-2 mb-4">Discover related resources curated just for you</h2>
-<Row>
-<Col><Button className="w-btn">Articles</Button></Col>
-<Col><Button className="w-btn">White Papers</Button></Col>
-<Col><Button className="w-btn">Case Studeis</Button></Col>    
-</Row>
-
-</Container>
+<InsightsBtn tags='330'/>
 <Container className="mb-5">
 <h1 className="fs-2 mt-5 mb-5">Features of SunTec&apos;s Ecosystem Management and Monetization</h1>
 <Row>
@@ -247,51 +268,9 @@ function LinksExample() {
 <Col></Col>
 <Col></Col>
 </Row>
-
 </Container>
-<Container className="wbg-gy text-center d-flex flex-column justify-content-center align-items-center" style={{height:10 + 'em'}}>
-<h1 className="fs-4">Rounding up the pulse of the industry as we go along.</h1>
-<Button className="b-btn">Be up to date now!</Button>
-</Container>
-<Container className="mb-5 mt-5 text-center">
-{heading && <h2>Our Latest Insights</h2>}
-<Container>
-  <Row>
-  {
-
-allInsights.map((post) => {
-  //console.log(post);
-
-  const Type =  post['type'];
-  const Pslug =  post['slug'];
-  let Links;
-  if(Type =='page'){
-    Links = Pslug;
-  }
-  else{
-    Links = Type + '/'+ Pslug;
-  }
-return (
-<Col key={post['id']} sm={4}>
-<Link 
-href={Links}
-className="pr-text text-decoration-none">
-<Card>
-      <Card.Img variant="top" src={post['featured_img_src']}/>
-      <Card.Body className="text-start" style={{height: 6 +'em'}}>
-        <Card.Title>{post['title']}</Card.Title>
-      </Card.Body>
-      <Card.Body  className="text-start">
-        <Card.Link >Read More</Card.Link>
-      </Card.Body>
-    </Card>
-</Link> 
-    </Col>
-  )
-})}
-</Row>
-</Container>
-</Container>
+<CtaCall text="Rounding up the pulse of the industry as we go along." btn="Be up to date now!" url="/insights"/>    
+<Insights tags='330'/>
 <Footer/>
 </>
 

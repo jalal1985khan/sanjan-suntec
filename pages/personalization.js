@@ -4,14 +4,22 @@ import React, { useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import BootstrapModal from '../components/Modal';
+import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
+import CtaCall from '../components/CtaCall';
+import Breadcum from '../components/Breadcum';
+import Insights from '../utils/FetchInsights';
+import InsightsBtn from '../utils/InsightsBtn';
+import ShortCard from '../utils/ShortCard';
 
 function LinksExample() {
 
-  const [allInsights, setInsights] = useState([]);
-  const [heading, setHeading] = useState(false);
+  const router = useRouter()  
   const [showModal, setShowModal] = useState(false);
   const PdfLink = 'https://www.suntecgroup.com/wp-content/uploads/2022/05/Personalization-use-cases.pdf';
   const PostTitle = "SunTec Personalization Solution for Banking";
+  const PostDescription = "Embrace the open economy – adopt new business models and increase revenue sources. Become a true value aggregator through collaboration and co-innovation.";
+  const PostImage = '/images/personliasetion.png';   
 
   const handleShowModal = () => {
     setShowModal(true);
@@ -24,19 +32,45 @@ function LinksExample() {
 
   return (
 <>
-<Header/>
-<Container fluid className="breadcum">
-<Breadcrumb >
-      <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-      <Breadcrumb.Item href="/personalization" active>
-      SunTec Personalization Solution for Banking
-      </Breadcrumb.Item>
-    </Breadcrumb>
-</Container>
+      <Header />
+      <NextSeo
+      title={PostTitle}
+      description={PostDescription}
+      canonical="/{router.asPath}"
+      openGraph={{
+        url: `${router.asPath}`,
+        title: `${PostTitle}`,
+        description: `${PostDescription}`,
+        images: [
+          {
+            url: `${PostImage}`,
+            width: 800,
+            height: 600,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          {
+            url: `${PostImage}`,
+            width: 900,
+            height: 800,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          { url: `${PostImage}` },
+          { url: `${PostImage}` },
+        ],
+        siteName: 'SunTec Group',
+      }}
+      twitter={{
+        handle: '@handle',
+        site: '@site',
+        cardType: 'summary_large_image',
+      }}
+    />       
+<Breadcum PostTitle={PostTitle} />
 <Container className="p-3 b-banner" fluid style={{ 
-      backgroundImage: `url("/images/personliasetion.png")` 
+      backgroundImage: `url(${PostImage})` 
     }}>
-
 <Row>
 <Col>
 <div className="square-dark">
@@ -120,14 +154,8 @@ function LinksExample() {
 </Col>
 </Row>
 </Container>
-<Container className="wbg-sun text-center d-flex flex-column justify-content-center" style={{height: 10 +'em'}}>
-<h2 className="text-white fs-2 mb-4">Discover related resources curated just for you</h2>
-<Row>
-<Col><Button className="w-btn">Articles</Button></Col>
-<Col><Button className="w-btn">White Papers</Button></Col>
-<Col><Button className="w-btn">Case Studeis</Button></Col>    
-</Row>
-</Container>
+<InsightsBtn tags='333'/>
+        
 </Container>
 <hr/>
 <Container className="mb-5">
@@ -200,11 +228,58 @@ function LinksExample() {
 </Row>
 
 </Container>
+<CtaCall text="Know your customers better and deliver hyper-personalized offerings with SunTec."
+        btn="Start a conversation"
+        url="/contact-us/" />      
+      
+<Container className="mt-5" style={{background:'#F4F4F4'}} fluid>
+<Container className='pb-5 pt-5'>
+        <Row>  
+<Col sm={6}>
+              <ShortCard
+                title='Enterprise Product Management'
+                img='images/1.png'
+              />
+              </Col>
+            <Col sm={6}>
+            <ShortCard
+                title='Ecosystem Management and Monetization'
+                img='images/2.png'/></Col>
+          </Row>
 
+          <Row>  
+<Col sm={6}>
+              <ShortCard
+                title='Dynamic Offer Management'
+                img='images/3.png'
+                 />
+              </Col>
+            <Col sm={6}>
+            <ShortCard
+                title='Relationship-based Pricing Management'
+                img='images/4.png'
+              />
+            </Col>   
+          </Row>  
 
-<Container className="wbg-sun text-white middle p-5" style={{height:7 +'em'}}>
-<h2>Join our Team of Dreamers, Innovators and Go-Getters</h2>
+          <Row>  
+<Col sm={6}>
+              <ShortCard
+                title='Benefits and Loyalty Management'
+                img='images/5.png'
+                 />
+              </Col>
+            <Col sm={6}>
+            <ShortCard
+                title='Enterprise Billing and Statements Management'
+                img='images/6.png'
+              />
+            </Col>   
+</Row>            
 </Container>
+</Container>
+
+<Insights tags='333'/>      
 <Footer/>
 </>
 

@@ -178,7 +178,7 @@ function NavScrollExample() {
                                        </Link>
                                     </li>
                                     <li className="mb-4">
-                                       <Link href="/personalization" className="text-decoration-none text-black">
+                                       <Link href="/product-rationalization" className="text-decoration-none text-black">
                                           <h6>Product Rationalization</h6>
                                           <small>Reduce complexity, enable agility, and offer a spectrum of choices to your customers.</small>
                                        </Link>

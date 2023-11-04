@@ -4,46 +4,64 @@ import Link from 'next/link';
 import configData from "../config.json";
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-
+import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
+import CtaCall from '../components/CtaCall';
+import Breadcum from '../components/Breadcum';
+import Insights from '../utils/FetchInsights';
+import InsightsBtn from '../utils/InsightsBtn';
+import CardBox from '../utils/Card';
 
 const Xelerate = () => {
-
-  const [allInsights, setInsights] = useState([]);
-  const [heading, setHeading] = useState(false); 
-
-  const fetchInsights = async () => {
-    let url = "";
-    url = `${configData.SERVER_URL}all-insights?tag=320`;
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
-      console.log(data.length);
-      setInsights(data);
-      if(data.length > 1){
-        setHeading(true);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  useEffect(() => {
-    fetchInsights();
-  },[]);
+  
+  const router = useRouter()  
+  const PdfLink = '';
+  const PostTitle = "Enabling Digitally Empathetic Enterprises";
+  const PostDescription = "Increase Customer Lifetime Value | Manage Revenue Effectively";
+  const PostImage = "/images/xelerate.jpeg"; 
 
   return (
     <>
       <Header />
-      <Container fluid className="breadcum">
-        <Breadcrumb >
-          <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-          <Breadcrumb.Item href="/company" active>
-            SunTec Xelerate
-          </Breadcrumb.Item>
-        </Breadcrumb>
-      </Container>
-      <Container className="p-3 b-banner" fluid style={{
-        backgroundImage: `url("/images/xelerate.jpeg")`
-      }}>
+      <NextSeo
+      title={PostTitle}
+      description={PostDescription}
+      canonical="/{router.asPath}"
+      openGraph={{
+        url: `${router.asPath}`,
+        title: `${PostTitle}`,
+        description: `${PostDescription}`,
+        images: [
+          {
+            url: `${PostImage}`,
+            width: 800,
+            height: 600,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          {
+            url: `${PostImage}`,
+            width: 900,
+            height: 800,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          { url: `${PostImage}` },
+          { url: `${PostImage}` },
+        ],
+        siteName: 'SunTec Group',
+      }}
+      twitter={{
+        handle: '@handle',
+        site: '@site',
+        cardType: 'summary_large_image',
+      }}
+    />  
+
+<Breadcum PostTitle={PostTitle}/>
+<Container className="p-3 b-banner" fluid style={{ 
+      backgroundImage: `url(${PostImage})` 
+    }}>
 
         <Row>
           <Col sm={4}>
@@ -287,146 +305,58 @@ const Xelerate = () => {
         <h2 className="">SunTec Xelerate Products</h2>
         <p className="fs-5">We offer the flexibility for you to combine components of SunTec Xelerate to create specific solutions for digital transformation, revenue management, customer experience orchestration and partner ecosystem management.</p>
         <Row>
-          <Col><Card className="sao_shadow" style={{ height: 6 + 'em' }}>
-            <Card.Body className="c_body">
-              <Card.Title className="mb-4 fs-3">Enterprise Product Management</Card.Title>
-              <Card.Text className="fs-5">Put the customer at the heart of your enterprise and enable right selling through SunTec Xelerate Enterprise
-Product Management. Combined with an end-to-end life cycle management this master catalog
-enables managing of personalized products, including both internal as well as external partner products, and helps in setting up a single source of truth for all products and services.</Card.Text>
-
-            </Card.Body>
-            <Card.Body>
-              <Button className="b-btn">Explore</Button>
-            </Card.Body>
-          </Card>
+          <Col>
+          <CardBox title="Enterprise Product Management"
+              desc="Put the customer at the heart of your enterprise and enable right selling through SunTec Xelerate Enterprise Product Management. Combined with an end-to-end life cycle management this master catalog enables managing of personalized products, including both internal as well as external partner products, and helps in setting up a single source of truth for all products and services."
+              url='/enterprise-product-management/' />
           </Col>
-          <Col><Card className="sao_shadow" style={{ height: 18 + 'em' }}>
+          <Col>
+          <CardBox title="Dynamic Offer Management"
+              desc="Enrich your customer engagement through highly personalized, contextual offers with SunTec Xelerate Offer Management. It helps organizations grow customer relationships with a highly configurable offer management capability that enables customer choice, enhances customer relationships, reduces time and cost to market and propels growth through up-sell and cross-sell capabilities."
+              url='/dynamic-offer-management/' />
 
-            <Card.Body className="c_body">
-              <Card.Title className="mb-4 fs-3">Dynamic Offer Management</Card.Title>
-              <Card.Text className="fs-5">Enrich your customer engagement through highly personalized, contextual offers with SunTec Xelerate Offer Management. It helps organizations grow customer relationships with a highly configurable offer management capability that enables customer choice, enhances customer relationships, reduces time and cost to market and propels growth through up-sell and cross-sell capabilities.</Card.Text>
-            </Card.Body>
-            <Card.Body>
-              <Button className="b-btn">Explore</Button>
-            </Card.Body>
-          </Card>
           </Col>
-          <Col><Card className="sao_shadow" style={{ height: 18 + 'em' }}>
-
-            <Card.Body className="c_body">
-              <Card.Title className="mb-4 fs-3">Deal Management</Card.Title>
-              <Card.Text className="fs-5">Mitigate risk and reduce revenue leakage by automating the end-to-end deal process across products, businesses and geographies while ensuring price transparency and compliance with policy using SunTec Xelerate Deal Management. It helps manage the sales process right from the construction of the proposal through to the negotiation and closure of the deal.</Card.Text>
-            </Card.Body>
-            <Card.Body>
-              <Button className="b-btn">Explore</Button>
-            </Card.Body>
-          </Card>
+          <Col>
+            
+          <CardBox title="Deal Management"
+              desc="Mitigate risk and reduce revenue leakage by automating the end-to-end deal process across products, businesses and geographies while ensuring price transparency and compliance with policy using SunTec Xelerate Deal Management. It helps manage the sales process right from the construction of the proposal through to the negotiation and closure of the deal."
+              url='/deal-management-home/' />
           </Col>
         </Row>
         <Row>
-          <Col><Card className="sao_shadow">
-
-            <Card.Body className="c_body">
-              <Card.Title className="mb-4 fs-3">Relationship-based Pricing Management</Card.Title>
-              <Card.Text className="fs-5">Bring pricing to the forefront of your customer engagement strategy by creating an enterprise pricing master for fees, rates and charges. It complements and augments existing core banking capabilities and enables contextual pricing and fairness, enhances transparency for all stakeholders, improves governance and enhances revenue.</Card.Text>
-            </Card.Body>
-            <Card.Body>
-              <Button className="b-btn">Explore</Button>
-            </Card.Body>
-          </Card>
+          <Col>
+          <CardBox title="Relationship-based Pricing Management"
+              desc="Bring pricing to the forefront of your customer engagement strategy by creating an enterprise pricing master for fees, rates and charges. It complements and augments existing core banking capabilities and enables contextual pricing and fairness, enhances transparency for all stakeholders, improves governance and enhances revenue."
+              url='/relationship-based-pricing-management/' />
           </Col>
-          <Col><Card className="sao_shadow" style={{ height: 18 + 'em' }}>
-
-            <Card.Body className="c_body">
-              <Card.Title className="mb-4 fs-3">Enterprise Billing and Statements Management</Card.Title>
-              <Card.Text className="fs-5">Improve the quality of revenue across the enterprise by improving customer transparency and preventing revenue leakage with SunTec Xelerate. It helps build an enterprise capability for multi-product, multi-entity and hierarchical invoicing for all stakeholders with extremely rich billing and invoicing capabilities that helps in automating the billing process comprehensively.</Card.Text>
-            </Card.Body>
-            <Card.Body>
-              <Button className="b-btn">Explore</Button>
-            </Card.Body>
-          </Card>
+          <Col>
+          <CardBox title="Enterprise Billing and Statements Management"
+              desc="Improve the quality of revenue across the enterprise by improving customer transparency and preventing revenue leakage with SunTec Xelerate. It helps build an enterprise capability for multi-product, multi-entity and hierarchical invoicing for all stakeholders with extremely rich billing and invoicing capabilities that helps in automating the billing process comprehensively."
+              url='/enterprise-billing-and-statements-management/' />
           </Col>
-          <Col><Card className="sao_shadow">
-
-            <Card.Body className="c_body">
-              <Card.Title className="mb-4 fs-3">Ecosystem Management and Monetization</Card.Title>
-              <Card.Text className="fs-5">Embrace the open economy – adopt new business models and increase revenue sources with SunTec Xelerate Ecosystem Management and Monetization. Make your organization a true value aggregator through end-to-end management, monitoring, and monetization capabilities across the partner and the customer value chain.</Card.Text>
-            </Card.Body>
-            <Card.Body>
-              <Button className="b-btn">Explore</Button>
-            </Card.Body>
-          </Card>
+          <Col>
+          <CardBox title="Ecosystem Management and Monetization"
+              desc="Embrace the open economy – adopt new business models and increase revenue sources with SunTec Xelerate Ecosystem Management and Monetization. Make your organization a true value aggregator through end-to-end management, monitoring, and monetization capabilities across the partner and the customer value chain."
+              url='/ecosystem-management-and-monetization/' />
           </Col>
         </Row>
         <Row>
-          <Col><Card className="sao_shadow">
-
-            <Card.Body className="c_body">
-              <Card.Title className="mb-4 fs-3">Benefits and Loyalty Management</Card.Title>
-              <Card.Text className="fs-5">Improve your share of wallet and engage with customers across product lines with targeted and
-differentiated loyalty programs. Organizations can understand and evaluate each relationship,
-regardless of the complexity of client and account hierarchies, ensuring faster time to market helping retain existing customers as well as attracting new customers.</Card.Text>
-            </Card.Body>
-            <Card.Body>
-              <Button className="b-btn">Explore</Button>
-            </Card.Body>
-          </Card>
+          <Col>
+          <CardBox title="Benefits and Loyalty Management"
+              desc="Improve your share of wallet and engage with customers across product lines with targeted and differentiated loyalty programs. Organizations can understand and evaluate each relationship, regardless of the complexity of client and account hierarchies, ensuring faster time to market helping retain existing customers as well as attracting new customers."
+              url='/benefits-and-loyalty-management/' />
           </Col>
-          <Col><Card className="sao_shadow" style={{ height: 18 + 'em' }}>
-
-            <Card.Body className="c_body">
-              <Card.Title className="mb-4 fs-3">Enterprise Indirect Taxation Management</Card.Title>
-              <Card.Text className="fs-5">Comply with all indirect tax requirements through an enterprise solution for all aspects of taxation.
-SunTec Xelerate provides an out-of-the-box solution designed to de-clutter core systems, extract the
-indirect taxation logic and ensure a smooth journey with indirect tax (GST & VAT) compliance.</Card.Text>
-            </Card.Body>
-            <Card.Body>
-              <Button className="b-btn">Explore</Button>
-            </Card.Body>
-          </Card>
+          <Col>
+          <CardBox title="Enterprise Indirect Taxation Management"
+              desc="Comply with all indirect tax requirements through an enterprise solution for all aspects of taxation.
+              SunTec Xelerate provides an out-of-the-box solution designed to de-clutter core systems, extract the
+              indirect taxation logic and ensure a smooth journey with indirect tax (GST & VAT) compliance."
+              url='/enterprise-indirect-taxation-management/' />
           </Col>
           <Col></Col>
         </Row>
       </Container>
-<Container className="mb-5 mt-5 text-center">
-{heading && <h2>Our Latest Insights</h2>}
-<Container>
-  <Row>
-  {
-
-allInsights.map((post) => {
-  //console.log(post);
-
-  const Type =  post['type'];
-  const Pslug =  post['slug'];
-  let Links;
-  if(Type =='page'){
-    Links = Pslug;
-  }
-  else{
-    Links = Type + '/'+ Pslug;
-  }
-return (
-<Col key={post['id']} sm={4}>
-<Link 
-href={Links}
-className="pr-text text-decoration-none">
-<Card>
-      <Card.Img variant="top" src={post['featured_img_src']}/>
-      <Card.Body className="text-start" style={{height: 6 +'em'}}>
-        <Card.Title>{post['title']}</Card.Title>
-      </Card.Body>
-      <Card.Body  className="text-start">
-        <Card.Link >Read More</Card.Link>
-      </Card.Body>
-    </Card>
-</Link> 
-    </Col>
-  )
-})}
-</Row>
-</Container>
-</Container>
+<Insights tags='320'/>
 <Footer />
     </>
   )

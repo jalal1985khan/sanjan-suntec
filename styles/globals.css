@@ -13,6 +13,9 @@
                                     color: #fff !important;
                                     
                                 }
+                                .capital{
+                                    text-transform: capitalize;
+                                }
                                 
                                 .txt-main {
                                     color: #95519e !important;
@@ -296,10 +299,24 @@
                                 height:50px;
                             }
                                 .w-btn {
+                                    color:#fff;
                                     border: 2px solid #fff !important;
                                     border-radius: 0px!important;
                                     padding: 11px !important;
-                                    width: 300px;
+                                    width:100%;
+                                    background-color: #78d9de00 !important;
+                                }
+                                .resource a{
+                                    color:#fff;
+                                }
+                                .resource a:hover{
+                                    color:#fff;
+                                }
+                                .resource{
+                                    color:#fff;
+                                    border: 2px solid #fff !important;
+                                    border-radius: 0px!important;
+                                    padding: 11px !important;
                                     background-color: #78d9de00 !important;
                                 }
                                 .c-img{
@@ -662,6 +679,16 @@
                                     padding: 41px;
                                     width: 700px;
                                 }
+
+                                .readmore {
+                                    color: #95519e;
+                                    text-decoration: none;
+                                }
+                                a{
+                                    text-decoration: none !important;
+                                }
+                              
+                                
                                 
                                 .r-text {
                                     background-color: #793781;
@@ -782,7 +809,7 @@
                                 }
                                 
                                 .sa_shadow {
-                                    height: 620px !important;
+                                    height: 620px;
                                     border: 0px !important;
                                     box-shadow: 5px 5px 10px 0px rgb(0 0 0 / 28%);
                                     margin: 10px 10px 10px 10px;
