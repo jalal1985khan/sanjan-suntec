@@ -24,6 +24,17 @@
                                 .wbg-main {
                                     background-color: #8CDEE2;
                                 }
+                                .wbg-orange{
+                                    background-color: #ff6309;
+                                }
+                                
+                                .line-20{
+                                    background-color: #ff6309;
+    height: 6px;
+    border: 0px;
+    opacity: 1;
+    width: 20% !important;
+                                }
                                 
                                 .wbg-top {
                                     background-color: #d5c0d9ae;
@@ -127,12 +138,7 @@
                                     padding-left: 0em;
                                 }
                                 
-                                @media only screen and (min-width: 600px) {
-                                    .eventsNav {
-                                        width: 22em;
-                                        padding-bottom: 1em;
-                                    }
-                                }
+                                
                                 
                                 .h_alert {
                                     width: 80% !important;
@@ -236,7 +242,15 @@
                                     /* opacity: 1 ; */
                                     
                                 }
-                                
+                                .deep-btn {
+                                    background-color: #00B1B0 !important;
+                                    border: 0px !important;
+                                    border-radius: 0px!important;
+                                    width: 250px;
+                                    padding: 11px !important;
+                                    text-decoration: none;
+                                    color:#fff;
+                                }
                                 
                                
                                 
@@ -358,6 +372,12 @@
                                     
                                 }
                                 
+                                .n_icon {
+                                    width: 90px;
+                                    height: 90px;
+                                }
+
+
                                 .show-latam {
                                     height: 600px;
                                     display: flex;
@@ -668,7 +688,7 @@
                                     height: auto;
                                     text-align: start;
                                     padding: 41px;
-                                    width: 550px;
+                                    /* width: 550px; */
                                 }
                                 
                                 .pe-text {
@@ -679,6 +699,51 @@
                                     padding: 41px;
                                     width: 700px;
                                 }
+                                a.expand-btn:hover {
+                                    color: #fff;
+                                }
+                                .expand-btn {
+                                    border-radius: 0px;
+                                    background-color: #95519e;
+                                    border: none;
+                                    color: #fff;
+                                    /* text-align: center; */
+                                    font-size: 16px;
+                                    padding: 10px;
+                                    width: 220px;
+                                    transition: all 0.5s;
+                                    cursor: pointer;
+                                    margin: 0px;
+                                    box-shadow: 0 10px 20px -8px rgba(0, 0, 0,.7);
+                                }
+                                  
+                                  .expand-btn{
+                                    cursor: pointer;
+                                    display: inline-block;
+                                    position: relative;
+                                    transition: 0.5s;
+                                  }
+                                  
+                                  .expand-btn:after {
+                                    content: '»';
+                                    position: absolute;
+                                    font-size: 28px;
+                                    opacity: 0;
+                                    top: 0px;
+                                    right: -20px;
+                                    transition: 0.5s;
+                                    color: #ffffff;
+                                  }
+                                  
+                                  .expand-btn:hover{
+                                    padding-right: 24px;
+                                    padding-left:8px;
+                                  }
+                                  
+                                  .expand-btn:hover:after {
+                                    opacity: 1;
+                                    right: 10px;
+                                  }
 
                                 .readmore {
                                     color: #95519e;
@@ -702,9 +767,19 @@
                                 }
                                 
                                 .w-text {
-                                    width: 113%;
+                                    width: 100%;
+                                    margin-left:54px;
+                                    min-height:95px;
+                                    height: auto;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
                                 
                                 }
+                                h1.fs-1{
+                               margin-left:0px;
+                                }
+                               
                                 
                                 .c-text {
                                     background-color: #ffffffcb;
@@ -714,6 +789,7 @@
                                     padding-top: 41px;
                                     padding-bottom: 41px;
                                     padding-left: 41px;
+                                    padding-right: 41px;
                                     /* width: 550px; */
                                 }
                                 
@@ -898,7 +974,18 @@
                                     border-radius: 0px !important;
                                     height: 40px;
                                 }
-                                
+                                .future {
+                                    background-color: #D1F0F2;
+                                    background-image: url(/images/righ_img.png);
+                                    background-repeat: no-repeat;
+                                    background-position-y: bottom;
+                                }
+                                .deep {
+                                    background-color: #8448A0;
+                                    background-image: url(/images/section_2_bg.png);
+                                    background-repeat: no-repeat;
+                                    background-position-y: bottom;
+                                }
                                 .profile.offcanvas.offcanvas-start.show {
                                     width: 60%;
                                 }
@@ -1013,7 +1100,7 @@
                                 
                                 .ribbon-2 {
                                     background: #ee583a;
-                                    top: 96px;
+                                    top: 0px;
                                 }
                                 
                                 .ribbon-1:before {
@@ -1021,7 +1108,8 @@
                                     width: 0;
                                     border-bottom: 3.5em solid #008A87;
                                     border-right: 3.5em solid transparent;
-                                    right: -56px;
+                                    right: -8px;
+                                    bottom: 24px;
                                 }
                                 
                                 .ribbon-2:before {
@@ -1118,6 +1206,9 @@
                                     color: #96509F;
                                     font-weight: 600;
                                     font-size: 17px;
+                                }
+                                .video-post{
+                                    height:27em;
                                 }
                                 
                                 @media all and (min-width: 992px) {
@@ -1226,15 +1317,58 @@
                                     line-height: 21px;
                                 }
                                 /*   card design template start here */
+                                @media (min-width: 768px){
+                                   
+
+                                }
                                 
                                 @media only screen and (max-width: 600px) {
+                                    .video-post{
+                                        height:auto;
+                                    }
+                                    .ribbon-1:before {
+                                        height: 0;
+                                        width: 0;
+                                        border-bottom: 3.5em solid #008A87;
+                                        border-right: 3.5em solid transparent;
+                                        right: -8px;
+                                        bottom: 10px;
+                                    }
+                                    .eventsNav {
+                                        width: 22em;
+                                        padding-bottom: 1em;
+                                    }
+                                    .breadcum{
+                                        overflow: hidden;
+                                    }
+                                    .breadcrumb{
+                                        flex-wrap: nowrap !important;
+                                        overflow: hidden;
+                                    }
+                                    li.breadcrumb-item.active {
+                                        overflow: hidden;
+                                        white-space: nowrap;
+                                        text-overflow: ellipsis;
+                                        width: 44%;
+                                    }
+                                    .social {
+                                        height: auto;
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: center;
+                                        align-items: center;
+                                    }
+                                   
                                     .ribbon-1 {
                                         top: -14px !important;
                                     }
                                     .r-text {
-                                        width: 80% !important;
+                                        width: 90% !important;
                                     }
                                     .w-text {
-                                        width: 125%;
+                                        width: 100%;
+                                    }
+                                    .news-in{
+                                        width:100% !important;
                                     }
                                 }

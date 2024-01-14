@@ -38,7 +38,7 @@ return (
 <Container fluid key={post.id} className="success_post" style={{ backgroundImage: `url(${post['_embedded']['wp:featuredmedia'][0]['source_url']})`}}>
 </Container>
 <Container className="wbg-gr social" fluid>
-<Row>
+<Row className="d-flex flex-column flex-lg-row flex-sm-row">
 <Col className="d-flex flex-column justify-content-center align-items-end text-white fs-5">
 Liked the post? Share this on your social media</Col>
 <Col>

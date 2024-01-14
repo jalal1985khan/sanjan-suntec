@@ -27,9 +27,6 @@ function LinksExample() {
     setShowModal(false);
 };
 
-
-
-
   return (
 <>
 <Header />
@@ -73,7 +70,7 @@ function LinksExample() {
     }}>
 
 <Row>
-<Col>
+<Col lg={5} xs={12} sm={12} md={6}>
 <div className="b-text">
 <h1>Dynamic Offer Management</h1>
 <p>Grow and enrich your customer relationships by quickly launching highly personalized, contextual offers.</p>
@@ -85,15 +82,15 @@ function LinksExample() {
 </Row>
 </Container>
 <Container>
-<Row className="d-flex flex-row mt-5 mb-5">
-<Col sm={6}>
-<img src="/images/xelerate.png" height="350"/>
+<Row className="d-flex flex-column flex-lg-row mt-5 mb-5">
+<Col lg={6} sm={12}>
+<img src="/images/xelerate.png" height="350" className='w-100'/>
 </Col>
-<Col sm={6}>
+<Col lg={6} sm={12}>
 <h2 className="fs-1">Why SunTec Xelerate?</h2>
 <p className="fs-5">SunTec&apos;s Dynamic Offer Management on SunTec Xelerate platform is a digital innovation middle layer that can easily integrate with the bank&apos;s existing technology landscape and provide a highly configurable offer management capability that enables customer choice, enhances customer relationships, reduces time and cost to market and propels growth through up-sell and cross-sell capabilities.</p>
 </Col>
-</Row>    
+</Row>         
 </Container>
 
 <InsightsBtn tags="326" />
@@ -102,7 +99,7 @@ function LinksExample() {
 <Container className="mb-5">
 <h1 className="fs-2 mt-5 mb-5">Features of SunTec&apos;s Dynamic Offer Management</h1>
 <Row>
-<Col>
+<Col lg={4} md={6}>
 <Card className="c_shadow" style={{height:18+ 'em'}}>
       <Card.Img className="card-icon-left" src="/images/icon_1.png" />
       <Card.Body className="c_body">
@@ -113,7 +110,7 @@ function LinksExample() {
       </Card.Body>
     </Card>
 </Col>
-<Col>
+<Col lg={4} md={6}>
 <Card className="c_shadow" style={{height:18+ 'em'}}>
       <Card.Img className="card-icon-left" src="/images/icon_2.png" />
       <Card.Body className="c_body">
@@ -124,7 +121,7 @@ function LinksExample() {
       </Card.Body>
     </Card>
 </Col>
-<Col>
+<Col lg={4} md={12}>
 <Card className="c_shadow" style={{height:18+ 'em'}}>
       <Card.Img className="card-icon-left" src="/images/icon_3.png" />
       <Card.Body className="c_body">
@@ -138,7 +135,7 @@ function LinksExample() {
 </Row>
 
 <Row>
-<Col>
+<Col lg={4} md={6}>
 <Card className="c_shadow" style={{height:18+ 'em'}}>
       <Card.Img className="card-icon-left" src="/images/icon_4.png" />
       <Card.Body className="c_body">
@@ -149,7 +146,7 @@ function LinksExample() {
       </Card.Body>
     </Card>
 </Col>
-<Col>
+<Col lg={4} md={6}>
 <Card className="c_shadow" style={{height:18+ 'em'}}>
       <Card.Img className="card-icon-left" src="/images/icon_5.png" />
       <Card.Body className="c_body">
@@ -160,7 +157,7 @@ function LinksExample() {
       </Card.Body>
     </Card>
 </Col>
-<Col>
+<Col lg={4} md={12}>
 <Card className="c_shadow" style={{height:18+ 'em'}}>
       <Card.Img className="card-icon-left" src="/images/icon_6.png" />
       <Card.Body className="c_body">
@@ -176,7 +173,7 @@ function LinksExample() {
 <Container>
 </Container>
 <Container className="gra_color pt-3" fluid style={{height:45 + 'em'}}>
-<Row>
+<Row className='d-flex flex-lg-row flex-column'>
   <Col className="center"><img src="/images/xelerate.png" height="300"/></Col>
   <Col>
   <h3 className="text-white fs-2">&quot;Enable customer centricity with the right solution to each customer&apos;s context and need&quot;</h3>
@@ -191,7 +188,7 @@ function LinksExample() {
 <Container className="mb-5">
 <h1 className="fs-2 mt-5 mb-5">Benefits</h1>
 <Row>
-<Col>
+<Col sm={12} lg={4} xs={12} md={6}>
 <Card className="c_shadow" style={{height:15+ 'em'}}>
       <Card.Img className="card-icon-left" src="/images/icon_4_1.png" />
       <Card.Body className="c_body">
@@ -201,7 +198,7 @@ function LinksExample() {
       </Card.Body>
     </Card>
 </Col>
-<Col>
+<Col sm={12} lg={4} xs={12} md={6}>
 <Card className="c_shadow" style={{height:15+ 'em'}}>
 <Card.Img className="card-icon-left" src="/images/icon_4_2.png" />
       <Card.Body className="c_body">
@@ -211,7 +208,7 @@ function LinksExample() {
       </Card.Body>
     </Card>
 </Col>
-<Col>
+<Col sm={12} lg={4} xs={12} md={12}>
 <Card className="c_shadow" style={{height:15+ 'em'}}>
 <Card.Img className="card-icon-left" src="/images/icon_4_3.png" />
       <Card.Body className="c_body">
@@ -224,7 +221,7 @@ function LinksExample() {
 </Row>
 
 <Row>
-<Col>
+<Col sm={12} lg={4} xs={12} md={6}>
 <Card className="c_shadow" style={{height:15+ 'em'}}>
 <Card.Img className="card-icon-left" src="/images/icon_4_4.png" />
       <Card.Body className="c_body">
@@ -234,7 +231,7 @@ function LinksExample() {
       </Card.Body>
     </Card>
 </Col>
-<Col>
+<Col sm={12} lg={4} xs={12} md={6}>
 <Card className="c_shadow" style={{height:15+ 'em'}}>
 <Card.Img className="card-icon-left" src="/images/icon_4_5.png" />
       <Card.Body className="c_body">
@@ -244,7 +241,7 @@ function LinksExample() {
       </Card.Body>
     </Card>
 </Col>
-<Col>
+<Col sm={12} lg={4} xs={12} md={12}>
 <Card className="c_shadow" style={{height:15+ 'em'}}>
 <Card.Img className="card-icon-left" src="/images/icon_4_6.png" />
       <Card.Body className="c_body">
@@ -256,7 +253,7 @@ function LinksExample() {
 </Col>
 </Row>
 <Row>
-<Col>
+<Col sm={12} lg={4} xs={12} md={12}>
 <Card className="c_shadow" style={{height:15+ 'em'}}>
 <Card.Img className="card-icon-left" src="/images/icon_4_7.png" />
       <Card.Body className="c_body">

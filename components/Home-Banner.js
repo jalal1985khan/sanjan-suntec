@@ -6,7 +6,7 @@ function UncontrolledExample() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="/images/HomeBanner1.png"
+          src="/images/banner_home.png"
           alt="First slide"
         />
 
@@ -14,7 +14,7 @@ function UncontrolledExample() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="/images/HomeBanner2.png"
+          src="/images/banner_home_2.png"
           alt="Second slide"
         />
 
@@ -22,7 +22,17 @@ function UncontrolledExample() {
       <Carousel.Item>
         <img
           className="d-block w-100"
-          src="/images/india_carousel_banner_image.png"
+          src="/images/banner_home_3.jpg"
+
+          alt="Third slide"
+        />
+
+
+      </Carousel.Item>
+      <Carousel.Item>
+        <img
+          className="d-block w-100"
+          src="/images/banner_home_4.jpg"
 
           alt="Third slide"
         />

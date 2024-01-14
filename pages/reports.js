@@ -52,13 +52,12 @@ export default function Home() {
 <Container className="p-3 b-banner" fluid style={{ 
       backgroundImage: `url("/images/Newsroom.jpg")` 
     }}>
-
 <Row>
-<Col sm={4}>
+<Col sm={11} xs={11} lg={4}>
 <div className="r-text">
-<div class="ribbon-1"></div>
 <h1 className="fs-1">Reports</h1>
 <div className="wbg-gr p-2 w-text">
+<div class="ribbon-1"></div>
 <p className="fs-5">Get insights on topics that are transforming enterprises.</p>
 </div>
 </div>
@@ -66,6 +65,7 @@ export default function Home() {
 <Col >
 </Col> 
 </Row>
+
 </Container>
 <Container className="mt-5 ">
 <Row>

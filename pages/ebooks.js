@@ -52,20 +52,20 @@ export default function Home() {
 <Container className="p-3 b-banner" fluid style={{ 
       backgroundImage: `url("/images/ebooks_banner.jpeg")` 
     }}>
-
 <Row>
-<Col sm={4}>
+<Col sm={11} xs={11} lg={4}>
 <div className="r-text">
-<div class="ribbon-1"></div>
 <h1 className="fs-1">Ebooks</h1>
 <div className="wbg-gr p-2 w-text">
-<p className="fs-5">Get detailed industry insights from SunTec</p>
+              <div class="ribbon-1"></div>
+              <p className="fs-5">Get detailed industry insights from SunTec</p>
 </div>
 </div>
 </Col> 
 <Col >
 </Col> 
 </Row>
+
 </Container>
 
 

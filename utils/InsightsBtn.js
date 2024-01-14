@@ -32,17 +32,12 @@ function InsightsBtn({tags}) {
     return (
               
 <Container className="wbg-sun text-center d-flex flex-column justify-content-center" style={{height: 10 +'em'}}>
-  <Row className="center">
-          {
-            
-            
+<Row className="center">
+          {    
 allInsights.map((post, index) => {
   //console.log(post);
-  
-
   const Type =  post['type'];
   const Pslug =  post['slug'];
-  
   let Links;
   if(Type =='page'){
     Links = Pslug;
@@ -55,7 +50,6 @@ allInsights.map((post, index) => {
 <>
 <Col sm={3}><Button className="w-btn capital" href="#insights">{Type}</Button></Col>
   </>      
-
   )
 })}
 </Row>

@@ -14,7 +14,7 @@ function NavScrollExample() {
 <div className="wbg-menu">
    <div className="container">
       <nav className="navbar navbar-expand-lg navbar-dark p-0">
-         <Link href="/"><img src="/images/suntec-logo.png"/></Link>
+                 <Link href="/"><img src="/images/new-logo.svg" width={200} height={50} /></Link>
          
          <button className="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" 
             aria-expanded="false" aria-label="Toggle navigation">
@@ -164,9 +164,12 @@ function NavScrollExample() {
                   <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Solutions</a>
                   <div className="dropdown-menu mega-menu p-3">
                      <div className="row">
-                        <div className="col-sm-8">
-                        <h2 className="fs-5">Solutions Overview</h2>
-                        <p className="desc-text">Build relationships, enhance efficiency, and ensure compliance.</p>
+                                <div className="col-sm-8">
+                                <Link href="/solutions" className="text-decoration-none text-black">
+                              <h2 className="fs-5">Solutions Overview</h2>
+                              <p className="desc-text">Build relationships, enhance efficiency, and ensure compliance.</p>
+                              </Link>
+                        
                         <hr className="border"/>
                         <div className="row">
                               <div className="col-sm-6">
@@ -249,9 +252,11 @@ function NavScrollExample() {
                   <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Platforms</a>
                   <div className="dropdown-menu mega-menu p-3">
                      <div className="row">
-                        <div className="col-sm-8">
-                           <h2 className="fs-5">Platforms Overview</h2>
-                           <p className="desc-text">Built for customer-centricity, efficiency, and security.</p>
+                                <div className="col-sm-8">
+                                <Link href="/platforms" className="text-decoration-none text-black">
+                              <h2 className="fs-5">Platforms Overview</h2>
+                              <p className="desc-text">Built for customer-centricity, efficiency, and security.</p>
+                              </Link>
                            <hr className="border"/>
                               <div className="row">
                                  <div className="col-sm-6">
@@ -299,9 +304,12 @@ function NavScrollExample() {
                   <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Insights</a>
                   <div className="dropdown-menu mega-menu p-3">
                      <div className="row">
-                        <div className="col-sm-8">
-                           <h2 className="fs-5">All Resources</h2>
-                           <p className="desc-text">Read up on the latest market developments and expert insights.</p>
+                                <div className="col-sm-8">
+                              <Link href="/all-resources" className="text-decoration-none text-black">
+                              <h2 className="fs-5">All Resources</h2>
+                              <p className="desc-text">Read up on the latest market developments and expert insights.</p>
+                              </Link>
+                           
                            <hr className="border"/>
                               <div className="row">
                                  <div className="col-sm-6">

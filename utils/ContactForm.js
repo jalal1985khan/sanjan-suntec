@@ -22,7 +22,7 @@ const ContactForm = ({ customTitle , pdfFile }) => {
     };
 
     const isBlacklistedEmail = (email) => {
-        const blacklistDomains = ['gmail.com', 'yahoo.com', /* Add more domains as needed */];
+        const blacklistDomains = ['gmail.com', 'yahoo.com','test.com', /* Add more domains as needed */];
         const emailDomain = email.split('@')[1].toLowerCase();
         return blacklistDomains.includes(emailDomain);
     };
@@ -31,6 +31,14 @@ const ContactForm = ({ customTitle , pdfFile }) => {
     const [error, setError] = useState('');
     const [successMessage, setSuccessMessage] = useState('');
     const [formVisible, setFormVisible] = useState(true);
+    const [firstName, setFirstName] = useState(false);
+    const [lastName,setLastName]= useState(false);
+    const [designation,setDesignation]= useState(false);
+    const [businessEmail,setBusinessEmail]= useState(false);
+    const [businessPhoneNumber,setPhoneNumber]= useState(false);
+    const [organization,setOrganisation]= useState(false);
+    const [country,setCountry]= useState(false);
+
 
     const handleChange = (e) => {
         setFormData({
@@ -46,56 +54,59 @@ const ContactForm = ({ customTitle , pdfFile }) => {
         if (isBlank(formData.firstName)) {
             setError('Please enter a first name.');
             setIsSubmitting(false);
+            setFirstName(true);
             return;
         }
         if (isBlank(formData.lastName)) {
             setError('Please enter a valid last name.');
             setIsSubmitting(false);
-            return;
-        }
-
-        if (isBlank(formData.lastName)) {
-            setError('Please enter a valid last name.');
-            setIsSubmitting(false);
+            setLastName(true);
             return;
         }
 
         if (isBlank(formData.designation)) {
             setError('Please enter a designation.');
             setIsSubmitting(false);
+            setDesignation(true);
             return;
         }
 
         if (isBlank(formData.businessEmail)) {
             setError('Please enter a Business Email.');
             setIsSubmitting(false);
+            setBusinessEmail(true);
             return;
         }
 
         if (isBlank(formData.businessPhoneNumber)) {
             setError('Please enter a valid Phone Number.');
             setIsSubmitting(false);
+            setPhoneNumber(true);
             return;
         }
 
         if (isBlank(formData.organization)) {
             setError('Please enter a Organization.');
             setIsSubmitting(false);
+            setOrganisation(true);
             return;
         }
         if (isBlank(formData.country)) {
             setError('Please enter a Country.');
             setIsSubmitting(false);
+            setCountry(true);
             return;
         }
 
         if (isBlacklistedEmail(formData.businessEmail)) {
             setError('Sorry, we do not accept email addresses from Gmail, Yahoo, and similar domains.');
             setIsSubmitting(false);
+            setBusinessEmail(true);
             return;
         }
 
         try {
+            
             const response = await axios.post(
                 'https://elementor.ivistasolutions.biz/wp-json/contact-form-7/v1/contact-forms/52288/feedback',
                 formData,
@@ -110,7 +121,8 @@ const ContactForm = ({ customTitle , pdfFile }) => {
             if (response.data.status === 'mail_sent') {
                 setFormVisible(false); // Hide the form
                 setSuccessMessage('Thank you for your submission!');
-            } else {
+            }
+            else {
                 setError('An error occurred. Please try again.');
             }
         } catch (err) {
@@ -133,8 +145,8 @@ const ContactForm = ({ customTitle , pdfFile }) => {
                                 
 <input
 type="text"
-name="firstName"
-className="form-control"
+name="firstName"                                    
+className={`form-control ${firstName ? 'is-invalid' : ''}`}
 id="firstName"
 placeholder="First Name"
 value={formData.firstName}
@@ -148,7 +160,7 @@ onChange={handleChange}
 <input
 type="text"
 name="lastName"
-className="form-control"
+className={`form-control ${lastName ? 'is-invalid' : ''}`}
 id="lastName"
 placeholder="Last Name"
 value={formData.lastName}
@@ -164,7 +176,7 @@ onChange={handleChange}
 <input
 type="text"
 name="designation"
-className="form-control"
+className={`form-control ${designation ? 'is-invalid' : ''}`}
 id="designation"
 placeholder="Designation"
 value={formData.designation}
@@ -177,7 +189,7 @@ onChange={handleChange}
 <input
 type="text"
 name="businessEmail"
-className="form-control"
+className={`form-control ${businessEmail? 'is-invalid' : ''}`}
 id="designation"                                
 placeholder="Business Email"
 value={formData.businessEmail}
@@ -191,7 +203,7 @@ onChange={handleChange}
 <label for="businessPhoneNumber" className="form-label">Business PhoneNumber <span class="required">*</span></label>                            
 <input
 type="text"
-className="form-control"
+className={`form-control ${businessPhoneNumber ? 'is-invalid' : ''}`}
 id="businessPhoneNumber"                                
 name="businessPhoneNumber"
 placeholder="Business PhoneNumber"
@@ -205,7 +217,7 @@ onChange={handleChange}
 <input
 type="text"
 name="organization"
-className="form-control"
+className={`form-control ${organization ? 'is-invalid' : ''}`}
 id="organization"                                 
 placeholder="Organization"
 value={formData.organization}
@@ -220,7 +232,7 @@ onChange={handleChange}
 <input
 type="text"
 name="country"
-className="form-control"
+className={`form-control ${country ? 'is-invalid' : ''}`}
 id="country"                                 
 placeholder="Country"
 value={formData.country}

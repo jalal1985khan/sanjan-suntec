@@ -34,10 +34,8 @@ function Insights({tags}) {
 <Container className="mt-5">
   <Row className="center">
   {
-
 allInsights.map((post) => {
   //console.log(post);
-
   const Type =  post['type'];
   const Pslug =  post['slug'];
   let Links;
@@ -48,7 +46,7 @@ allInsights.map((post) => {
     Links = Type + '/'+ Pslug;
   }
 return (
-<Col key={post['id']} sm={4}>
+  <Col key={post['id']} sm={6} lg={4} xs={6} md={6}>
 <Link 
 href={Links}
 className="pr-text text-decoration-none">

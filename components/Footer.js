@@ -8,7 +8,7 @@ function LinksExample() {
 <Link href="/request-a-demo" className="demo">Request a Demo</Link>
 <Container className="wbg-black p-3 mt-4" fluid>
 <Row>
-<Col sm={3}>
+<Col sm={6} lg={3} xs={6} md={6}>
 <h2 className="text-white fs-5">Products</h2>
 <hr className="border"/>
 <ul className="text-white list-inline">
@@ -23,7 +23,7 @@ function LinksExample() {
 
 </ul>
 </Col>
-<Col sm={2}>
+<Col sm={6} lg={2} xs={6} md={6}>
 <h2 className="text-white fs-5">Industries</h2>
 <hr className="border"/>
 <ul className="text-white list-inline">
@@ -33,7 +33,7 @@ function LinksExample() {
 <li><Link href="/industries-insurance">Insurance</Link></li>
 </ul>
 </Col>
-<Col sm={3}>
+<Col sm={6} lg={3} md={6} xs={6}>
 <h2 className="text-white fs-5">Solutions</h2>
 <hr className="border"/>
 <ul className="text-white list-inline">
@@ -48,7 +48,7 @@ function LinksExample() {
 <li>Account Analysis Solution</li>
 </ul>
 </Col>
-<Col sm={2}>
+<Col sm={6} lg={2} xs={6} md={6}>
 <h2 className="text-white fs-5">Insights</h2>
 <hr className="border"/>
 <ul className="text-white list-inline">
@@ -65,7 +65,7 @@ function LinksExample() {
 <li><Link href="/webinars">Webinars</Link></li>
 </ul>
 </Col>
-<Col sm={2}>
+<Col sm={6} lg={2} xs={6} md={6}>
 <h2 className="text-white fs-5">About</h2>
 <hr className="border"/>
 <ul className="text-white list-inline">
@@ -83,15 +83,23 @@ function LinksExample() {
 <li><Link href="/privacypolicy">Privacy Policy</Link></li>
 </ul>
 </Col>
-</Row>
-<Row>
-<Col sm={3}>
+
+<Col lg={3} sm={6} xs={6} className='d-lg-none d-xl-none'>
+<h2 className="text-white fs-5">Platforms</h2>
+<hr className="border"/>
+<ul className="text-white list-inline">
+<li><Link href="/suntec-xelerate">Xelerate</Link></li>
+<li><Link href="/suntec-cloud">Cloud</Link></li>
+<li><Link href="/suntec-saas">Saas</Link></li>
+</ul>
+</Col>          
+<Col lg={3} sm={12} xs={12}>
 <h2 className="text-white fs-5">Contact Info</h2>
 <hr className="border"/>
 <p className="text-white">info@suntecgroup.com</p>
-</Col>
-<Col sm={2}></Col>
-<Col sm={3}>
+</Col>          
+<Col sm={2} className=' d-lg-block d-xl-block'></Col>
+<Col sm={3} className=' d-lg-block d-sm-none d-md-none d-xs-none d-none'>
 <h2 className="text-white fs-5">Platforms</h2>
 <hr className="border"/>
 <ul className="text-white list-inline">
@@ -100,9 +108,9 @@ function LinksExample() {
 <li><Link href="/suntec-saas">Saas</Link></li>
 </ul>
 </Col>
-<Col></Col>
-<Col></Col>
+            
 </Row>
+
 </Container>
 <Container className="wbg-dark text-white middle " fluid style={{height:5 +'em'}}>
 <Row>

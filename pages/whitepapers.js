@@ -14,7 +14,7 @@ export default function Home() {
   const [hide, setHide] = useState(false);
   const [loading, setLoading] = useState(true);
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+// fetch data start
   useEffect(() => {
     const fetchData = async () => {
           setIsSubmitting(true);
@@ -37,7 +37,7 @@ export default function Home() {
     setPage(page + 1);
     //alert(page);
   };
-
+// end here 
   return (
     <>
 <Header />
@@ -52,13 +52,12 @@ export default function Home() {
 <Container className="p-3 b-banner" fluid style={{ 
       backgroundImage: `url("/images/whitepapers.jpeg")` 
     }}>
-
 <Row>
-<Col sm={4}>
+<Col sm={11} xs={11} lg={4}>
 <div className="r-text">
-<div class="ribbon-1"></div>
 <h1 className="fs-1">Whitepapers</h1>
 <div className="wbg-gr p-2 w-text">
+<div class="ribbon-1"></div>
 <p className="fs-5">Get the newest thought leadership content from our experts</p>
 </div>
 </div>
@@ -66,6 +65,7 @@ export default function Home() {
 <Col >
 </Col> 
 </Row>
+
 </Container>
 
 

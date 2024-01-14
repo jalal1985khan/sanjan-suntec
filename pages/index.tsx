@@ -4,8 +4,10 @@ import Link from 'next/link';
 import configData from "../config.json";
 import Header from '../components/Header';
 import Banner from '../components/Home-Banner';
+import Future from '../components/Home-Future'
 import Text from '../components/Home-Text';
 import Feature from '../components/Feature-Content';
+import DeepDrive from '../components/Deep-Drive'
 import Fposts from '../components/Feature-Posts';
 import Clogos from '../components/ClientsLogo';
 import Banking from '../components/Banking-Opportunities';
@@ -130,9 +132,10 @@ useEffect(() => {
     <>
   <Header/>
     <Banner/>
-    <Text/>
-    <Feature/>
-    <Fposts/>
+    
+      <Future />
+      <DeepDrive/>
+    
     <Clogos/>
     <Banking/>
     <Counts/>

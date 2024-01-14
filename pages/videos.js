@@ -87,13 +87,12 @@ function LinksExample() {
 <Container className="p-3 b-banner" fluid style={{ 
       backgroundImage: `url("/images/videos.png")` 
     }}>
-
 <Row>
-<Col sm={4}>
+<Col sm={11} xs={11} lg={4}>
 <div className="r-text">
-<div class="ribbon-1"></div>
 <h1 className="fs-1">Videos</h1>
 <div className="wbg-gr p-2 w-text">
+<div class="ribbon-1"></div>
 <p className="fs-5">Discover how our clients across verticals benefited with SunTec</p>
 </div>
 </div>
@@ -101,6 +100,7 @@ function LinksExample() {
 <Col >
 </Col> 
 </Row>
+
 </Container>
 <Container className="mt-5 ">
 <h2 className="txt-main">Videos</h2>
@@ -111,12 +111,9 @@ function LinksExample() {
 movies.map((post, index) => {
     //console.log(post);
   return (
-
-    <Col sm={6} className="p-3" key={post.id}>
-
+<Col sm={6} className="p-3" key={post.id}>
 {
 post['acf']['youtube_link'] === ''? 
-
 <Image
           src={post['acf']['youtube_thumbs']['url']}
           alt={post['title']['rendered']}
@@ -137,7 +134,7 @@ post['acf']['youtube_link'] === ''?
 }
 
       <Card className="p-posts" >
-        <Card.Body className="posts" style={{ height: 27 +'em' }}>
+        <Card.Body className="posts video-post">
           <Card.Title className="fs-4 mb-4 font-weight-bold" style={{ height: 2 +'em' }} dangerouslySetInnerHTML={{ __html:post['title']['rendered']}}/>
           <div className="fs-5" dangerouslySetInnerHTML={{__html:post['acf']['description']}}/>        
         </Card.Body>

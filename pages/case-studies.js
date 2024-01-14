@@ -52,13 +52,13 @@ export default function Home() {
 <Container className="p-3 b-banner" fluid style={{ 
       backgroundImage: `url("/images/case-studies.jpeg")` 
     }}>
-
 <Row>
-<Col sm={4}>
+<Col sm={11} xs={11} lg={4}>
 <div className="r-text">
-<div class="ribbon-1"></div>
+
 <h1 className="fs-1">Case Studies</h1>
 <div className="wbg-gr p-2 w-text">
+              <div class="ribbon-1"></div>
 <p className="fs-5">Discover how our clients across verticals benefited with SunTec</p>
 </div>
 </div>
@@ -66,6 +66,8 @@ export default function Home() {
 <Col >
 </Col> 
 </Row>
+        
+
 </Container>
 
 
@@ -74,7 +76,7 @@ export default function Home() {
 <Row>
           
               {posts.map((post) => (
-                  <Col sm={4} className="p-3" key={post.id}>
+                <Col sm={12} lg={4} className="p-3" key={post.id}>
                   <Card className="p-posts" >
                     <Image
                       src={post['_embedded']['wp:featuredmedia'][0]['source_url']}

@@ -67,20 +67,21 @@ function LinksExample() {
 <Container className="p-3 b-banner" fluid style={{ 
       backgroundImage: `url("/images/datasheets_banner.jpeg")` 
     }}>
-
 <Row>
-<Col sm={4}>
+<Col sm={11} xs={11} lg={4}>
 <div className="r-text">
-<div class="ribbon-1"></div>
+
 <h1 className="fs-1">Data Sheets</h1>
 <div className="wbg-gr p-2 w-text">
-<p className="fs-5">We have a lot to say, unravel our product offerings from below!</p>
+              <div class="ribbon-1"></div>
+              <p className="fs-5">We have a lot to say, unravel our product offerings from below!</p>
 </div>
 </div>
 </Col> 
 <Col >
 </Col> 
 </Row>
+
 </Container>
 <Container className="mt-5 ">
 <h2 className="txt-main">Products</h2>
