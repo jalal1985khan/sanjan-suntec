@@ -85,7 +85,7 @@ function LinksExample() {
 <div className="b-text">
 <h1>Deal Management </h1>
 <p>Automate end-to-end deal management process, provide flexibility to create customer-specific deals, mitigate conduct risk and reduce revenue leakage while ensuring price transparency and policy compliance.</p>
-<button onClick={handleShowModal} className="r-btn">Read the Datasheet</button>
+<button onClick={handleShowModal} className="r-btn w-50">Read the Datasheet</button>
 <BootstrapModal show={showModal} handleClose={handleCloseModal} pdfLink={PdfLink} title={PostTitle} />
 </div>
 </Col> 

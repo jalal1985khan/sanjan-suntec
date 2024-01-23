@@ -4,23 +4,66 @@ import configData from "../../config.json";
 import {WhatsappShareButton, EmailShareButton ,TwitterShareButton ,LinkedinShareButton ,WhatsappIcon ,EmailIcon,TwitterIcon,LinkedinIcon} from "react-share";
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { NextSeo } from 'next-seo';
+import { useRouter } from 'next/router';
 // import GravityForm from 'react-native-gravityform';
 
-const post = ({data}) => {
+const post = ({ data }) => {
+  const router = useRouter()  
+  const PostTitle = "SunTec Solution for Credit Cards";
+  const PostDescription = "Personalize your credit cards program to attract and retain customers";
+  const PostImage = '/images/Credit-Cards-Solutions.jpg';  
+
   console.log(data);
   return (
     <div>
-<Header/>   
+      <Header /> 
 {
 data.map((post)=>{
 return (
 <div key={post.id}>
+
+<NextSeo
+      title={post['title']['rendered']}
+      description={PostDescription}
+      canonical="/{router.asPath}"
+      openGraph={{
+        url: `${router.asPath}`,
+        title: `${post['title']['rendered']}`,
+        description: `${PostDescription}`,
+        images: [
+          {
+            url: `${post['acf']['desktop_image']}`,
+            width: 800,
+            height: 600,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          {
+            url: `${post['acf']['desktop_image']}`,
+            width: 900,
+            height: 800,
+            alt: {PostTitle},
+            type: 'image/jpeg',
+          },
+          { url: `${post['acf']['desktop_image']}` },
+          { url: `${post['acf']['desktop_image']}` },
+        ],
+        siteName: 'SunTec Group',
+      }}
+      twitter={{
+        handle: '@handle',
+        site: '@site',
+        cardType: 'summary_large_image',
+      }}
+    />  
+    
 <Container fluid className="breadcum">
 <Breadcrumb >
       <Breadcrumb.Item href="/">Home</Breadcrumb.Item>
       <Breadcrumb.Item href="/ebooks">Ebooks</Breadcrumb.Item>
-      <Breadcrumb.Item href={post['slug']} active>
-      {post['title']['rendered']}
+        <Breadcrumb.Item href={post['slug']} active dangerouslySetInnerHTML={{ __html: post['title']['rendered'] }}>
+      
       </Breadcrumb.Item>
     </Breadcrumb>
 </Container>
@@ -28,7 +71,11 @@ return (
 <Row>
 <Col sm={6}>
 <div className="c-text">
-<h1 className="fs-2 text-bolder" dangerouslySetInnerHTML={{__html:post['title']['rendered']}}/>
+            <h1 className="fs-2 text-bolder" dangerouslySetInnerHTML={{ __html: post['title']['rendered'] }} />
+            {post['acf']['author_name'] && (
+              <><hr/>
+  <p dangerouslySetInnerHTML={{ __html: post['acf']['author_name'] }} className='fs-5' /></>
+)}
 </div>
 </Col> 
 <Col >
@@ -36,7 +83,7 @@ return (
 </Row>
 </Container>
 <Container fluid key={post.id} className="success_post" style={{ backgroundImage: `url(${post['_embedded']['wp:featuredmedia'][0]['source_url']})`}}>
-</Container>
+    </Container>
 <Container className="wbg-gr social" fluid>
 <Row className="d-flex flex-column flex-lg-row flex-sm-row">
 <Col className="d-flex flex-column justify-content-center align-items-end text-white fs-5">

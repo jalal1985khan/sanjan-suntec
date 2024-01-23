@@ -28,7 +28,7 @@ function NavScrollExample() {
                   <a className="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Products</a>
                   <div className="dropdown-menu mega-menu p-3">
                      <div className="row">
-                     <div className="col-sm-8"><Link href="/" className="text-decoration-none text-black">
+                     <div className="col-sm-8"><Link href="/products" className="text-decoration-none text-black">
                      <h2 className="fs-5">Products Overview</h2>
                      <p className="desc-text">Accelerate innovation and customer centricity with SunTec.</p></Link>
                      <hr className="border"/>
@@ -106,7 +106,7 @@ function NavScrollExample() {
                   <div className="dropdown-menu mega-menu p-3">
                      <div className="row">
                         <div className="col-sm-8">
-                        <Link href="/" className="text-decoration-none text-black">
+                        <Link href="/industries" className="text-decoration-none text-black">
                            <h2 className="fs-5">Industries Overview</h2>
                            <p className="desc-text">Count on our vertical focused, award-winning products and solutions.</p></Link>
                            <hr className="border"/>
@@ -187,23 +187,30 @@ function NavScrollExample() {
                                        </Link>
                                     </li>
                                     <li className="mb-4">
-                                       <Link href="/" className="text-decoration-none text-black">
+                                       <Link href="/suntec-negative-interest-management" className="text-decoration-none text-black">
                                           <h6>Negative Interest Management</h6>
                                           <small>Acquire the capabilities required to rapidly roll out negative interests and evolve with the policy.</small>
                                        </Link>
                                     </li>
                                     <li className="mb-4">
-                                       <Link href="/" className="text-decoration-none text-black">
+                                       <Link href="/suntec-e-invoicing" className="text-decoration-none text-black">
                                           <h6>e-Invoicing</h6>
                                           <small>Increase transactional efficiency and ensure complete digital invoicing while also staying compliant.</small>
                                        </Link>
                                     </li>
                                     <li className="mb-4">
-                                       <Link href="/" className="text-decoration-none text-black">
-                                          <h6>Account Analysis Solution</h6>
+                                       <Link href="/account-analysis-solution" className="text-decoration-none text-black">
+                                          <h6>Account Analysis Solution for Banks</h6>
                                           <small>Deliver accurate and transparent account analysis statements</small>
                                        </Link>
-                                    </li>
+                                            </li>
+                                            <li className="mb-4">
+                                       <Link href="/" className="text-decoration-none text-black">
+                                          <h6>Payments and Cash Management</h6>
+                                          <small>Enabling Superior Global Cash Management with a Robust Offer-to-Bill Lifecycle Solution</small>
+                                       </Link>
+                                            </li>
+                                        
                                  </ul>
                               </div>
                               <div className="col-sm-6">
@@ -215,21 +222,33 @@ function NavScrollExample() {
                                        </Link>
                                     </li>
                                     <li className="mb-4">
-                                       <Link href="/" className="text-decoration-none text-black">
+                                       <Link href="/suntec-vat" className="text-decoration-none text-black">
                                           <h6>VAT</h6>
                                           <small>Comply with Value Added Tax (VAT) in the GCC.</small>
                                        </Link>
                                     </li>
                                     <li className="mb-4">
-                                       <Link href="/" className="text-decoration-none text-black">
+                                       <Link href="/invoicing-solution-for-swedish-banks" className="text-decoration-none text-black">
                                           <h6>Invoicing Solution for Swedish Banks</h6>
                                           <small>Meet your invoicing needs seamlessly and automate end-to-end billing process.</small>
                                        </Link>
                                     </li>
                                     <li className="mb-4">
-                                       <Link href="/" className="text-decoration-none text-black">
+                                       <Link href="/credit-card-solutions" className="text-decoration-none text-black">
                                           <h6>Credit Card Solution</h6>
                                           <small>Personalize your credit cards program to attract and retain customers.</small>
+                                       </Link>
+                                            </li>
+                                            <li className="mb-4">
+                                       <Link href="/" className="text-decoration-none text-black">
+                                          <h6>ESG Solution</h6>
+                                          <small>Accelerate Your Bank’s Progress on its ESG Journey with the SunTec ESG Solution</small>
+                                       </Link>
+                                            </li>
+                                            <li className="mb-4">
+                                       <Link href="/" className="text-decoration-none text-black">
+                                          <h6>Packages and Bundles</h6>
+                                          <small>Counter the Fragmentation of Banking Services with Personalized Bundling Strategies</small>
                                        </Link>
                                     </li>
                                  </ul>

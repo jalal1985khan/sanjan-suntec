@@ -18,7 +18,7 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
 
   const options = {
     loop: true,
-    margin: 10,
+    margin: 1,
     responsive: {
       0: {
         items: 1
@@ -27,7 +27,7 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
         items: 1
       },
       1000: {
-        items: 3
+        items: 4
       }
     }
   };
@@ -41,11 +41,13 @@ function LinksExample() {
     <h2 className="mb-5 mt-3">What’s it Like to Work with Us</h2>
 <OwlCarousel
           // className="owl-theme"
-          loop={true}
-          autoplay={true}
-          margin={10}
+          loop={false}
+          autoplay={false}
+          margin={1}
           {...options}
-        >
+      >
+        <div class="item bg-review" style={{background:'#ff000000'}}>
+            </div>
           <div class="item bg-review">
             <div className="ts-bg">
             <img src="/images/anu_testimonials.png" className="t_img"/>
@@ -63,15 +65,6 @@ function LinksExample() {
            <p className="fs-4">Tinku Susan Korah</p>
            <p className="txt-main">Analyst</p>
            <p >“If you have a mindset to learn new things, you can excel in whatever you do.”</p>
-          </div></div>
-          <div class="item bg-review">
-            <div className="ts-bg">
-            <img src="/images/ravi.png" className="t_img"/>
-            </div>
-          <div className="t_bg">
-           <p className="fs-4">Ravi Ramanathan</p>
-           <p className="txt-main">Senior Manager</p>
-           <p >“An organization without any boundaries.”</p>
           </div></div>
         </OwlCarousel>
 

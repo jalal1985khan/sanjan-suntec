@@ -2,8 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/company": "pages/company.js",
-  "/all-resources": "pages/all-resources.js",
-  "/": "pages/index.js",
-  "/solutions": "pages/solutions.js"
+  "/podcasts": "pages/podcasts.js",
+  "/account-analysis-solution": "pages/account-analysis-solution.js",
+  "/": "pages/index.js"
 }

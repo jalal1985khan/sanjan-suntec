@@ -20,9 +20,23 @@
                                 .txt-main {
                                     color: #95519e !important;
                                 }
-                                
+                                .wbg-green{
+                                    background-color:#01B1AF !important;
+                                }
+                                .wbg-greent{
+                                    background-image: linear-gradient(113deg, #016163 78%, #01B1AF 74%);
+                                }
+                                .wbg-blue{
+                                    background-color: #D6F4F6;
+                                }
+                                .wbg-pink{
+                                    background-color: #E9C7E1;
+                                }
                                 .wbg-main {
                                     background-color: #8CDEE2;
+                                }
+                                .wbg-grad{
+                                    background-image: linear-gradient(180deg, #E5F7F8 0%, #FCF7FB 100%)
                                 }
                                 .wbg-orange{
                                     background-color: #ff6309;
@@ -282,7 +296,13 @@
                                 .form-control {
                                     height: 44px;
                                 }
-                               
+                               .g-btn{
+                                background-color: #016163;
+                                color: white;
+                                padding: 10px;
+                                border-radius: 12px;
+                                border: 0px;
+                               }
                                 
                                 .b-btn {
                                     background-color: #95519e !important;
@@ -682,6 +702,7 @@
                                     cursor: pointer;
                                 }
                                 
+                                
                                 .b-text {
                                     background-color: #95519e;
                                     color: #ffff;
@@ -698,6 +719,27 @@
                                     text-align: start;
                                     padding: 41px;
                                     width: 700px;
+                                }
+                                .podcast{
+                                    padding-left: 11% !important;
+                                    text-align: center;
+                                    padding-right: 11% !important;
+                                }
+                                .px-text {
+                                    background-color: #fff;
+                                    color: #000;
+                                    height: auto;
+                                    text-align: start;
+                                    padding: 41px;
+                                    width: 700px;
+                                }
+                                .pt-text{
+                                    background-color: #fff;
+                                    color: #000;
+                                    height: auto;
+                                    text-align: start;
+                                    padding: 41px;
+                                    width: 100%;  
                                 }
                                 a.expand-btn:hover {
                                     color: #fff;

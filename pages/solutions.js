@@ -58,7 +58,9 @@ function Platforms() {
         cardType: 'summary_large_image',
       }}
     />  
-      <Breadcum PostTitle={PostTitle}/>
+<Breadcum PostTitle={PostTitle} />
+   
+
 <Container className="p-3 b-banner" fluid style={{ 
       backgroundImage: `url(${PostImage})` 
     }}>

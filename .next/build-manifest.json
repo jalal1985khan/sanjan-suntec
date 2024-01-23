@@ -30,20 +30,15 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/all-resources": [
+    "/account-analysis-solution": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/all-resources.js"
+      "static/chunks/pages/account-analysis-solution.js"
     ],
-    "/company": [
+    "/podcasts": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/company.js"
-    ],
-    "/solutions": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/solutions.js"
+      "static/chunks/pages/podcasts.js"
     ]
   },
   "ampFirstPages": []

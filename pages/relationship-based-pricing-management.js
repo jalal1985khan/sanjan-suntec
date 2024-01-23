@@ -79,7 +79,7 @@ function LinksExample() {
 <div className="b-text">
 <h1>Relationship-based Pricing Management</h1>
 <p>Bring pricing to the forefront of your customer engagement strategy by creating an enterprise pricing master for fees, rates and charges that win the hearts and minds of your customers.</p>
-<button onClick={handleShowModal} className="r-btn">Read the Datasheet</button>
+<button onClick={handleShowModal} className="r-btn w-50">Read the Datasheet</button>
 <BootstrapModal show={showModal} handleClose={handleCloseModal} pdfLink={PdfLink} title={PostTitle} />
 </div>
 </Col> 
