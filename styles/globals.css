@@ -1414,3 +1414,11 @@
                                         width:100% !important;
                                     }
                                 }
+
+
+
+                                .stard-end-border-radious, .start-end-border-radious {
+                                    padding: 25px !important;
+                                    background: #DEF6F5 !important;
+                                    border-radius: 50px 0px !important; 
+                                }
