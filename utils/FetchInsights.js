@@ -30,7 +30,7 @@ function Insights({tags}) {
 
   return (
 <Container className="mb-5 mt-5 text-center" id="insights">
-{heading && <h2>Our Latest Insights</h2>}
+{heading ?(<h2 className='fs-1 txt-dark-purple'>Further Reading</h2>):(<h2>Our Latest Insights</h2>)}
 <Container className="mt-5">
   <Row className="center">
   {

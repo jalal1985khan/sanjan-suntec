@@ -16,12 +16,39 @@
                                 .capital{
                                     text-transform: capitalize;
                                 }
-                                
+                                .wbg-suntec{
+                                    background-color: #493581;
+                                }
+
+                                .wbg-purple{
+                                    background-color: #95519e !important;
+                                }
+                                .accordion-button:not(.collapsed){
+                                    background: #95519e !important;
+                                }
+                                .accordion-button{
+                                    background: #95519e !important;
+                                }
+                                .button.accordion-button.collapsed {
+                                    background: #95519e !important;
+                                } 
+
+                                .accordion-button::after {
+                                    background-color: white;
+                                    border-radius: 14px;
+                                    padding: 10px;
+                                }
                                 .txt-main {
                                     color: #95519e !important;
                                 }
+                                .txt-suntec{
+                                    color: #493581;
+                                }
+                                .txt-dark-purple{
+                                    color:#642566 !important
+                                }
                                 .wbg-green{
-                                    background-color:#01B1AF !important;
+                                    background-color:#DEFCFE !important;
                                 }
                                 .wbg-greent{
                                     background-image: linear-gradient(113deg, #016163 78%, #01B1AF 74%);
@@ -41,15 +68,60 @@
                                 .wbg-orange{
                                     background-color: #ff6309;
                                 }
+                                .wbg-dark-purple{
+                                    background-color:#642566 !important
+                                }
+                                .wbg-dark-green{
+                                    background-color: #098989 !important;
+                                }
+                                .txt-dark-green{
+                                    color: #098989 !important;
+                                }
+                                .wbg-green{
+                                    background-color: #DEFCFE;
+                                }
                                 
                                 .line-20{
                                     background-color: #ff6309;
-    height: 6px;
-    border: 0px;
-    opacity: 1;
-    width: 20% !important;
+                                    height: 6px;
+                                    border: 0px;
+                                    opacity: 1;
+                                    width: 20% !important;
                                 }
-                                
+                                .border{
+                                    border: 1px solid red;
+                                }
+                                .triangle-down {
+                                    /* position: absolute; */
+                                    left: 0;
+                                    top: 100%;
+                                    width: 100%;
+                                    height: 0;
+                                    border-left: 50vw solid transparent;
+                                    border-right: 50vw solid transparent;
+                                    border-top: 30px solid #642566;
+                                    background: white;
+                                }
+                                .card-p{
+                                    --background-transition: 0.3s;
+                                    box-shadow: 8px 8px 0px 0px #493581;
+                                    --padding-block-start: 20px;
+                                    --padding-block-end: 20px;
+                                    --padding-inline-start: 20px;
+                                    --padding-inline-end: 20px;
+                                }
+                                .card-g{
+                                    --background-transition: 0.3s;
+                                    box-shadow: 12px 12px 0px 0px #098989;
+                                    --padding-block-start: 20px;
+                                    --padding-block-end: 20px;
+                                    --padding-inline-start: 20px;
+                                    --padding-inline-end: 20px;
+                                }
+                                .linear{
+                                    background: #E9C7E0;
+                                    background: linear-gradient(0deg, #642566 0%, #642566 50%, #E9C7E0 50%);
+                                }
                                 .wbg-top {
                                     background-color: #d5c0d9ae;
                                 }
@@ -332,6 +404,7 @@
                                 font-size:20px;
                                 height:50px;
                             }
+
                                 .w-btn {
                                     color:#fff;
                                     border: 2px solid #fff !important;
@@ -862,6 +935,18 @@
                                     justify-content: center;
                                     ;
                                 }
+                                .pa-banner {
+                                    background-repeat: no-repeat;
+                                    background-size: cover;
+                                    min-height: 500px;
+                                    height: auto;
+                                    display: flex;
+                                    flex-direction: column;
+                                    justify-content: center;
+                                    ;
+                                }
+
+
                                 
                                 .f-banner {
                                     background-repeat: no-repeat;
@@ -1057,6 +1142,16 @@
                                     border-bottom: 4px solid #000;
                                     border-left: 4px solid #000;
                                 }
+                                .square-light {
+                                    color: #fff;
+                                    height: auto;
+                                    text-align: start;
+                                    padding-left: 241px;
+                                    width: 250px;
+                                    border-top: 4px solid #fff;
+                                    border-bottom: 4px solid #fff;
+                                    border-left: 4px solid #fff;
+                                }
                                 
                                 .square-text {
                                     color: #ffff;
@@ -1077,6 +1172,15 @@
                                     left: -182px;
                                     position: relative;
                                 }
+                                .square-text-light {
+                                    color: #fff;
+                                    height: auto;
+                                    text-align: start;
+                                    padding: 0px;
+                                    width: 550px;
+                                    left: -182px;
+                                    position: relative;
+                                }
                                 
                                 .square .lin {
                                     height: 67px;
@@ -1090,6 +1194,12 @@
                                     width: 5px;
                                     flex: 1;
                                     background-color: #000;
+                                }
+                                .square-light .lin-light {
+                                    height: 67px;
+                                    width: 5px;
+                                    flex: 1;
+                                    background-color: #fff;
                                 }
                                 
                                 .csr-img {
@@ -1415,7 +1525,13 @@
                                     }
                                 }
 
-
+.mb-n1{
+    margin-bottom:-4rem!important;
+    z-index: 9;
+}
+.h-180{
+    height:230px;
+}
 
                                 .stard-end-border-radious, .start-end-border-radious {
                                     padding: 25px !important;

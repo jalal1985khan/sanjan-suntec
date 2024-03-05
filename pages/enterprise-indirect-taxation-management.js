@@ -95,7 +95,7 @@ function LinksExample() {
 <h1>Enterprise Indirect Taxation Management</h1>
 <p>Comply with all indirect taxation requirements through an
 enterprise solution for all aspects of taxation.</p>
-<button onClick={handleShowModal} className="r-btn">Read the Datasheet</button>
+<button onClick={handleShowModal} className="r-btn w-50">Read the Datasheet</button>
 <BootstrapModal show={showModal} handleClose={handleCloseModal} pdfLink={PdfLink} title={PostTitle} />
 </div>
 </Col> 

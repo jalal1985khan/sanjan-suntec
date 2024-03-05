@@ -54,7 +54,7 @@ const SinglePost = ({tags}) => {
       <div class="card mb-3 border-0" style={{background:'#e9c7e033'}}>
                   <div class="row g-0">
                   <div class="col-md-4 d-flex justify-content-center align-items-center">
-                      <iframe width="950" height="534" src={post.acf.youtube_link}  frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className='w-100 h-100'></iframe>
+                <iframe width="950" height="534" src={post.acf.youtube_link} frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen className='w-100 h-100'></iframe>
     </div>
     <div class="col-md-8 text-start d-flex align-items-center">
       <div class="card-body">

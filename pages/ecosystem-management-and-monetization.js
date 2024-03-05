@@ -76,7 +76,7 @@ return (
 <div className="b-text">
 <h1>Ecosystem Management and Monetization</h1>
 <p>Embrace the open economy – adopt new business models and increase revenue sources. Become a true value aggregator through collaboration and co-innovation.</p>
-<button onClick={handleShowModal} className="r-btn">Read the Datasheet</button>
+<button onClick={handleShowModal} className="r-btn w-50">Read the Datasheet</button>
 <BootstrapModal show={showModal} handleClose={handleCloseModal} pdfLink={PdfLink} title={PostTitle} />
 </div>
 </Col> 

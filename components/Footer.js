@@ -38,14 +38,17 @@ function LinksExample() {
 <hr className="border"/>
 <ul className="text-white list-inline">
 <li><Link href="/personalization">Personalization</Link></li>
-<li><Link href="/personalization">Banking-as-a-Service</Link></li>
-<li>Product Rationalization</li>
-<li>VAT for GCC</li>
-<li>Negative Interest Management</li>
-<li>Invoicing Solution for Swedish Banks</li>
-<li>e-Invoicing Solution for KSA</li>
-<li>Credit Card Solution</li>
-<li>Account Analysis Solution</li>
+<li><Link href="/suntec-banking-as-a-service-solution">Banking-as-a-Service</Link></li>
+<li><Link href="/product-rationalization">Product Rationalization</Link></li>
+<li><Link href="/suntec-vat">VAT for GCC</Link></li>
+<li><Link href="/suntec-negative-interest-management">Negative Interest Management</Link></li>
+<li><Link href="/invoicing-solution-for-swedish-banks">Invoicing Solution for Swedish Banks</Link></li>
+<li><Link href="/suntec-e-invoicing">e-Invoicing Solution for KSA</Link></li>
+<li><Link href="/credit-card-solutions">Credit Card Solution</Link></li>
+<li><Link href="/accelerate-your-banks-progress-on-its-esg-journey-with-the-suntec-esg-solution">ESG Solution</Link></li>
+<li><Link href="/personalization">Payments and Cash Management</Link></li>
+<li><Link href="/personalization">Packages and Bundles</Link></li>
+              
 </ul>
 </Col>
 <Col sm={6} lg={2} xs={6} md={6}>

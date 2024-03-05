@@ -11,7 +11,7 @@ function NavScrollExample() {
     <>
 
 
-<div className="wbg-menu">
+<div className="wbg-menu sticky-top">
    <div className="container">
       <nav className="navbar navbar-expand-lg navbar-dark p-0">
                  <Link href="/"><img src="/images/new-logo.svg" width={200} height={50} /></Link>
@@ -173,43 +173,47 @@ function NavScrollExample() {
                         <hr className="border"/>
                         <div className="row">
                               <div className="col-sm-6">
-                                 <ul className="nav-ul">
+                                         <ul className="nav-ul">
+                                         <li className="mb-4">
+                                       <Link href="/account-analysis-solution" className="text-decoration-none text-black">
+                                          <h6>Account Analysis Solution</h6>
+                                          <small>Deliver accurate and transparent account analysis statements</small>
+                                       </Link>
+                                            </li>
+                                            <li className="mb-4">
+                                       <Link href="/accelerate-your-banks-progress-on-its-esg-journey-with-the-suntec-esg-solution" className="text-decoration-none text-black">
+                                          <h6>ESG Solution</h6>
+                                          <small>Accelerate Your Bank’s Progress on its ESG Journey with the SunTec ESG Solution</small>
+                                       </Link>
+                                            </li>
+                                            <li className="mb-4">
+                                       <Link href="/packages-and-bundles" className="text-decoration-none text-black">
+                                          <h6>Packages and Bundles</h6>
+                                          <small>Counter the Fragmentation of Banking Services with Personalized Bundling Strategies</small>
+                                       </Link>
+                                    </li>
                                     <li className="mb-4">
                                        <Link href="/personalization" className="text-decoration-none text-black">
                                           <h6>Personalization</h6>
                                           <small>Tailor your offer to each customer&apos;s specific needs.</small>
                                        </Link>
-                                    </li>
-                                    <li className="mb-4">
-                                       <Link href="/product-rationalization" className="text-decoration-none text-black">
-                                          <h6>Product Rationalization</h6>
-                                          <small>Reduce complexity, enable agility, and offer a spectrum of choices to your customers.</small>
+                                            </li>
+                                            <li className="mb-4">
+                                       <Link href="/suntec-vat" className="text-decoration-none text-black">
+                                          <h6>VAT</h6>
+                                          <small>Comply with Value Added Tax (VAT) in the GCC.</small>
                                        </Link>
                                     </li>
-                                    <li className="mb-4">
+                                   
+                                    {/* <li className="mb-4">
                                        <Link href="/suntec-negative-interest-management" className="text-decoration-none text-black">
                                           <h6>Negative Interest Management</h6>
                                           <small>Acquire the capabilities required to rapidly roll out negative interests and evolve with the policy.</small>
                                        </Link>
-                                    </li>
-                                    <li className="mb-4">
-                                       <Link href="/suntec-e-invoicing" className="text-decoration-none text-black">
-                                          <h6>e-Invoicing</h6>
-                                          <small>Increase transactional efficiency and ensure complete digital invoicing while also staying compliant.</small>
-                                       </Link>
-                                    </li>
-                                    <li className="mb-4">
-                                       <Link href="/account-analysis-solution" className="text-decoration-none text-black">
-                                          <h6>Account Analysis Solution for Banks</h6>
-                                          <small>Deliver accurate and transparent account analysis statements</small>
-                                       </Link>
-                                            </li>
-                                            <li className="mb-4">
-                                       <Link href="/" className="text-decoration-none text-black">
-                                          <h6>Payments and Cash Management</h6>
-                                          <small>Enabling Superior Global Cash Management with a Robust Offer-to-Bill Lifecycle Solution</small>
-                                       </Link>
-                                            </li>
+                                    </li> */}
+                                    
+                                    
+                                           
                                         
                                  </ul>
                               </div>
@@ -220,14 +224,28 @@ function NavScrollExample() {
                                           <h6>Banking-as-a-Service</h6>
                                           <small className="m_text">Deliver lifecycle experiences through the ecosystem and not with mere products and services.</small>
                                        </Link>
-                                    </li>
-                                    <li className="mb-4">
-                                       <Link href="/suntec-vat" className="text-decoration-none text-black">
-                                          <h6>VAT</h6>
-                                          <small>Comply with Value Added Tax (VAT) in the GCC.</small>
+                                            </li>
+                                            <li className="mb-4">
+                                       <Link href="/suntec-e-invoicing" className="text-decoration-none text-black">
+                                          <h6>e-Invoicing</h6>
+                                          <small>Increase transactional efficiency and ensure complete digital invoicing while also staying compliant.</small>
+                                       </Link>
+                                            </li>
+                                            <li className="mb-4">
+                                       <Link href="/payments-and-cash-management" className="text-decoration-none text-black">
+                                          <h6>Payments and Cash Management</h6>
+                                          <small>Enabling Superior Global Cash Management with a Robust Offer-to-Bill Lifecycle Solution</small>
+                                       </Link>
+                                            </li>
+                                            <li className="mb-4">
+                                       <Link href="/product-rationalization" className="text-decoration-none text-black">
+                                          <h6>Product Rationalization</h6>
+                                          <small>Reduce complexity, enable agility, and offer a spectrum of choices to your customers.</small>
                                        </Link>
                                     </li>
-                                    <li className="mb-4">
+                                   
+                                     
+                                    {/* <li className="mb-4">
                                        <Link href="/invoicing-solution-for-swedish-banks" className="text-decoration-none text-black">
                                           <h6>Invoicing Solution for Swedish Banks</h6>
                                           <small>Meet your invoicing needs seamlessly and automate end-to-end billing process.</small>
@@ -238,19 +256,9 @@ function NavScrollExample() {
                                           <h6>Credit Card Solution</h6>
                                           <small>Personalize your credit cards program to attract and retain customers.</small>
                                        </Link>
-                                            </li>
-                                            <li className="mb-4">
-                                       <Link href="/" className="text-decoration-none text-black">
-                                          <h6>ESG Solution</h6>
-                                          <small>Accelerate Your Bank’s Progress on its ESG Journey with the SunTec ESG Solution</small>
-                                       </Link>
-                                            </li>
-                                            <li className="mb-4">
-                                       <Link href="/" className="text-decoration-none text-black">
-                                          <h6>Packages and Bundles</h6>
-                                          <small>Counter the Fragmentation of Banking Services with Personalized Bundling Strategies</small>
-                                       </Link>
-                                    </li>
+                                            </li> */}
+                                           
+                                          
                                  </ul>
                               </div>
                            </div> 

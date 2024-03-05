@@ -11,7 +11,6 @@ import Insights from '../utils/FetchInsights';
 import InsightsBtn from '../utils/InsightsBtn'
 
 function LinksExample() {
-
   const router = useRouter()  
   const [showModal, setShowModal] = useState(false);
   const PdfLink = '/pdf/SunTec-Offer-Management.pdf';

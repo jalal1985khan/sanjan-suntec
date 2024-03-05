@@ -75,7 +75,7 @@ function LinksExample() {
 <div className="b-text">
 <h1>Benefits and Loyalty Management</h1>
 <p>Improve your share of wallet – engage with your customers across product lines with targeted and differentiated loyalty programs. Manage customer relationships holistically to enhance loyalty, improve product depth and reduce attrition.</p>
-<button onClick={handleShowModal} className="r-btn">Read the Datasheet</button>
+<button onClick={handleShowModal} className="r-btn w-50">Read the Datasheet</button>
 <BootstrapModal show={showModal} handleClose={handleCloseModal} pdfLink={PdfLink} title={PostTitle} />
 </div>
 </Col> 
