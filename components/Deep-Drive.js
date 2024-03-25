@@ -7,8 +7,8 @@ function DeepDrive() {
           <Container>
               <h2 className='text-white pb-4'>Take a Deep Dive</h2>
           <Row>
-              <Col>
-              <Card className='border-0'>
+              <Col className='mt-3'>
+      <Card className='border-0' >
       <Card.Img variant="top" src="images/the_bank_of_20xx.png" />
       <Card.Body>
         <Card.Title style={{height:'100'+'px'}}>The Bank of 20XX: Navigating Uncharted Waters</Card.Title>
@@ -16,7 +16,7 @@ function DeepDrive() {
       </Card.Body>
     </Card>
               </Col>
-              <Col>
+              <Col className='mt-3'>
               <Card className='border-0'>
       <Card.Img variant="top" src="images/power_of_options.png"  />
       <Card.Body>
@@ -25,11 +25,11 @@ function DeepDrive() {
       </Card.Body>
     </Card>
               </Col>
-              <Col>
+              <Col className='mt-3'>
               <Card className='border-0'>
       <Card.Img variant="top" src="images/how_can_bank_moves.png" />
       <Card.Body>
-      <Card.Title style={{height:'100'+'px'}}>How Can Banks Move Beyond Transactional Relations to Build Lasting Customer Relationships?</Card.Title>
+      <Card.Title style={{minHeight:'100'+'px'}}>How Can Banks Move Beyond Transactional Relations to Build Lasting Customer Relationships?</Card.Title>
         <Button variant="primary" className='deep-btn'>Read Article</Button>
       </Card.Body>
     </Card>

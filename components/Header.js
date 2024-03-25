@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
@@ -5,8 +6,18 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Link from "next/link";
+import 'aos/dist/aos.css';
+import AOS from 'aos';
 
 function NavScrollExample() {
+
+   useEffect(() => {
+      AOS.init({
+        duration: 1000 // Customize duration
+      });
+    }, []);
+  
+
   return (
     <>
 
@@ -14,7 +25,7 @@ function NavScrollExample() {
 <div className="wbg-menu sticky-top">
    <div className="container">
       <nav className="navbar navbar-expand-lg navbar-dark p-0">
-                 <Link href="/"><img src="/images/new-logo.svg" width={200} height={50} /></Link>
+                 <Link href="/"><img src="/images/suntec-logo.svg" width={200} height={50} /></Link>
          
          <button className="navbar-toggler my-2" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav" 
             aria-expanded="false" aria-label="Toggle navigation">

@@ -4,7 +4,6 @@ function LinksExample() {
   return (
     <>
 <Container className="mt-5 pt-5 overflow-hidden g-0" fluid>
-      
 <Container style={{ background: '#fff'}} fluid className="f_content text-center g-0 overflow-hidden">     
 <Row >
 <Col className="section-first mx-1 p-5" sm={4} >

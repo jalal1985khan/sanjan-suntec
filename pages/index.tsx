@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import emeaCountries from '../utils/Countries/Emea'
 import APACCountries from '../utils/Countries/Apac'
+import LATAMCountries from '../utils/Countries/Latam'
+import AsiaCountries from '../utils/Countries/Asia'
 
 export default function CountryDetection() {
   const router = useRouter();
@@ -30,25 +32,38 @@ export default function CountryDetection() {
         console.error('Error fetching data:', error);
       }
     };
-      
-    
-
-    fetchData();
+fetchData();
   }, []);
     
     useEffect(() => {  
         if (emeaCountries.includes(currentCountry.trim())) {
           //setRegion('EMEA');
-          router.push('/en-gb');
+         // router.push('/en-gb');
           } 
-          if (APACCountries.includes(currentCountry.trim())) {
+        else if (APACCountries.includes(currentCountry.trim())) {
             //setRegion('en-in');
-            router.push('/en-in');
-        } 
+           // router.push('/en-in');
+          } 
+      else if (LATAMCountries.includes(currentCountry.trim())) {
+        router.push('/en-us');
+        }
+        else if (AsiaCountries.includes(currentCountry.trim())) {
+          router.push('/en-in');
+        }
         else {
-            //setRegion('Others');
-            router.push('/en-in');
+         //   setRegion('Others');
+           router.push('/en-in');
           }
     })
+
+  
+    return (
+  
+      <>
+      {currentCountry}
+      </>
     
+    )
+  
 }
+

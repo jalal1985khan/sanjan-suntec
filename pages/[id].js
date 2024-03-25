@@ -28,7 +28,6 @@ function Country() {
         <div>
             {regionEmeaLang ? (<En/>) : ''}
             {regionEnLang ? (<En />) : ''}
-            {regionEnLang ? (<En />) : ''}
             {regionUsLang ? (<En />) : ''}
             {regionGbLang ? (<En/>):''}
             

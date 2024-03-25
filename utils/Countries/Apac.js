@@ -8,7 +8,6 @@ const APACCountries = [
     "Cambodia",
     "China",
     "Fiji",
-    "India",
     "Indonesia",
     "Japan",
     "Kiribati",
@@ -39,6 +38,7 @@ const APACCountries = [
     "Tuvalu",
     "Vanuatu",
     "Vietnam",
+    "Romania",
     // Add more countries as needed
 ];
 

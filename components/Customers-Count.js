@@ -1,6 +1,7 @@
 import {Container,Row, Col,Button} from 'react-bootstrap';
 import Image from 'next/image';
 import Link from 'next/link'
+import CountUp from 'react-countup';
 
 function LinksExample() {
   return (
@@ -12,7 +13,10 @@ function LinksExample() {
 <Row>
 <Col className="b-box" sm={3}>
 <div>
-<h3 className="fs-1">4X</h3>
+              <h3 className="fs-1"><CountUp end={4}
+                suffix="X"
+                delay={2}
+              /></h3>
 <p className="fs-5 h">Increase in<br/> Deposit Growth</p>
 </div>            
 <div><hr style={{marginTop:30 +'px'}} /></div>
@@ -24,7 +28,11 @@ function LinksExample() {
 <Col sm={1} className="line"><hr className="l-border"/></Col>
 <Col className="b-box" sm={4}>
 <div>
-<h3 className="fs-1">3X</h3>
+              <h3 className="fs-1">
+                <CountUp end={3}
+                suffix="X"
+                delay={2}
+              /></h3>
 <p className="fs-5 h">Increase in <br />Customer Base</p>
 </div>            
 <div><hr style={{marginTop:33 +'px', marginBottom:30 +'px'}} /></div>
@@ -36,12 +44,20 @@ function LinksExample() {
 <Col sm={1} className="line"><hr className="l-border"/></Col>
 <Col className="b-box" sm={3}>
 <div>
-<h3 className="fs-1">2X</h3>
+<h3 className="fs-1"><CountUp end={2}
+                suffix="X"
+                delay={2}
+              /></h3>
 <p className="fs-5 h">Increase in Product to Customer Ratio</p>
 </div>            
 <div><hr style={{marginTop:33 +'px'}} /></div>
 <div>
-<h3 className="fs-1">60M+</h3>
+              <h3 className="fs-1">
+              <CountUp end={60}
+                suffix="M+"
+                delay={2}
+              />
+              </h3>
 <p className="fs-5 ">Reduction in Revenue Leakage</p>
 </div>
 </Col>

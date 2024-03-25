@@ -17,7 +17,7 @@ const OwlCarousel = dynamic(() => import("react-owl-carousel"), {
   });
 
   const options = {
-    loop: true,
+    loop: false,
     margin: 1,
     responsive: {
       0: {
@@ -42,7 +42,7 @@ function LinksExample() {
 <OwlCarousel
           // className="owl-theme"
           loop={false}
-          autoplay={false}
+          autoplay={true}
           margin={1}
           {...options}
       >
