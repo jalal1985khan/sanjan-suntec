@@ -302,7 +302,7 @@ catalog
       </Card.Body>
     </Card>
 </Col>
-<Col sm={12} lg={4} xs={12} md={6}>
+<Col sm={12} lg={4} xs={12} md={12}>
 <Card className="c_shadow" style={{height:15+ 'em'}}>
 <Card.Img className="card-icon-left" src="/images/icon_38.png" />
       <Card.Body className="c_body">

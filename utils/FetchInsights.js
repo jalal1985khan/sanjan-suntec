@@ -46,7 +46,7 @@ allInsights.map((post) => {
     Links = Type + '/'+ Pslug;
   }
 return (
-  <Col key={post['id']} sm={6} lg={4} xs={6} md={6}>
+  <Col key={post['id']} sm={12} lg={4} xs={12} md={12} className='py-3'>
 <Link 
 href={Links}
 className="pr-text text-decoration-none">
