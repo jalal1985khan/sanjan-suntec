@@ -28,7 +28,11 @@ return (
 <Row>
 <Col sm={6}>
 <div className="c-text">
-<h1 className="fs-2 text-bolder" dangerouslySetInnerHTML={{__html:post['title']['rendered']}}/>
+            <h1 className="fs-2 text-bolder" dangerouslySetInnerHTML={{ __html: post['title']['rendered'] }} />
+            {post['acf']['author_name'] && (
+              <><hr/>
+  <p dangerouslySetInnerHTML={{ __html: post['acf']['author_name'] }} className='fs-5' /></>
+)}
 </div>
 </Col> 
 <Col >
