@@ -305,9 +305,6 @@ As customer-centric strategies rule the roost, the business of banking is moving
 </Container>
 
 
-<Container className="wbg-sun text-white middle p-5" style={{height:7 +'em'}}>
-<h2>Join our Team of Dreamers, Innovators and Go-Getters</h2>
-</Container>
 <Footer/>
 </>
 
