@@ -28,9 +28,9 @@ function LinksExample() {
 <div className="square">
 <div class="lin"></div>
 <div className="square-text ">
-<h1 className="fs-1">What Drives the People at SunTec?</h1>
+<h1 className="fs-1">What Drives<br/>People at SunTec?</h1>
 <p className="fs-5">Explore inspiring testimonials and employee experiences, one story at a time</p>
-<Button  className="b-btn">Read more</Button>
+<Link  className="b-btn" href="/pdf/People-of-SunTec_3-14Apr.pdf">Read more</Link>
 </div>
 <div class="lin"></div>
 </div>
