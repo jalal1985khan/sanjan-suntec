@@ -30,7 +30,7 @@ function LinksExample() {
 <div className="square-text ">
 <h1 className="fs-1">CSR at SunTec</h1>
 <p className="fs-5">At SunTec, we believe in actively contributing back to the society for effective social change. In line with this belief, we formed Sneha, our CSR program that aims to help our society in two critical areas – Education and Health.</p>
-<Button  className="b-btn">CSR Policy</Button>
+<Link  className="b-btn" href="/pdf/SunTec-CSR-Policy_v2.pdf">CSR Policy</Link>
 </div>
 <div class="lin"></div>
 </div>
@@ -39,7 +39,7 @@ function LinksExample() {
 </Col> 
 </Row>
 </Container>
-<Container className="mt-5">
+{/* <Container className="mt-5">
 <Row>
 <Col className="border text-center">
 <img src="/images/csr_1.png" style={{height:5 + 'em'}}/>
@@ -57,7 +57,7 @@ function LinksExample() {
 <p className="fs-5">We talk to beneficiaries of social projects and quantify the impact created.</p>
 </Col>  
 </Row>
-</Container>
+</Container> */}
 <Container className="mt-5">
 <Row>
 <Col sm={5}><img src="/images/agasthya_balasram.svg" className="csr-img"/></Col>
